@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "id": "eyes",
+      "name": "メニュー・料金表",
+      "items": [
+        {
+          "id": "futae_maibotsu",
+          "name": "二重埋没法",
+          "price": 68000,
+          "description": ""
+        },
+        {
+          "id": "mayushita_sekkai",
+          "name": "眉下切開",
+          "price": 120000,
+          "description": ""
+        },
+        {
+          "id": "kuma_tori",
+          "name": "クマ取り",
+          "price": 80000,
+          "priceSuffix": "〜",
+          "description": "脱脂・ハムラ法"
+        },
+        {
+          "id": "megashira_sekkai",
+          "name": "目頭切開",
+          "price": 80000,
+          "description": ""
+        },
+        {
+          "id": "mejiri_tareme",
+          "name": "タレ目形成・目尻切開",
+          "price": 40000,
+          "priceSuffix": "〜",
+          "description": "グラマラスライン・目尻靱帯移動"
+        },
+        {
+          "id": "sekkai_ganken",
+          "name": "二重切開・眼瞼下垂",
+          "price": 180000,
+          "priceSuffix": "〜",
+          "description": "通常の方法・スカーレス二重術"
+        }
+      ]
+    }
+  ]
+}
