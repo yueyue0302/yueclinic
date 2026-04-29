@@ -138,15 +138,15 @@ export default async function MenuDetail({ params }: { params: { id: string } })
               </svg>
             </div>
             <div className="instagram-grid hover-up" style={{ padding: '0 20px', display: 'flex', gap: '1rem', overflowX: 'auto', scrollSnapType: 'x mandatory' }}>
-              <div style={{ flexShrink: 0, width: '320px', scrollSnapAlign: 'start', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
-                <iframe src="https://www.instagram.com/p/DOq99U5krkZ/embed" width="100%" height="520" frameBorder="0" scrolling="no"></iframe>
-              </div>
-              <div style={{ flexShrink: 0, width: '320px', scrollSnapAlign: 'start', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
-                <iframe src="https://www.instagram.com/p/C6vxfq2veIO/embed" width="100%" height="520" frameBorder="0" scrolling="no"></iframe>
-              </div>
-              <div style={{ flexShrink: 0, width: '320px', scrollSnapAlign: 'start', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
-                <iframe src="https://www.instagram.com/p/DBYsVcMztTE/embed" width="100%" height="520" frameBorder="0" scrolling="no"></iframe>
-              </div>
+              {(details.instagramUrls || [
+                "https://www.instagram.com/p/DOq99U5krkZ/embed",
+                "https://www.instagram.com/p/C6vxfq2veIO/embed",
+                "https://www.instagram.com/p/DBYsVcMztTE/embed"
+              ]).map((url: string, idx: number) => (
+                <div key={idx} style={{ flexShrink: 0, width: '320px', scrollSnapAlign: 'start', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
+                  <iframe src={url} width="100%" height="520" frameBorder="0" scrolling="no"></iframe>
+                </div>
+              ))}
             </div>
           </div>
         </div>
