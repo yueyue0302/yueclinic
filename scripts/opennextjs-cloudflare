@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+const { execSync } = require('child_process');
+const path = require('path');
+const pkgPath = path.dirname(require.resolve('@opennextjs/cloudflare/package.json'));
+const pkg = require(path.join(pkgPath, 'package.json'));
+const bin = typeof pkg.bin === 'string' ? pkg.bin : Object.values(pkg.bin)[0];
+const fullPath = path.join(pkgPath, bin);
+execSync(`node ${fullPath} ${process.argv.slice(2).join(' ')}`, { stdio: 'inherit', cwd: process.cwd() });
