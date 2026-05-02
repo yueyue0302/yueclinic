@@ -5,6 +5,8 @@ export const metadata = {
   title: '院長のつぶやき',
 };
 
+export const dynamic = 'force-static';
+
 export default function Columns() {
   const allColumnsData = getSortedColumnsData();
 

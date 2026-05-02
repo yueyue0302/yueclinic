@@ -37,6 +37,11 @@
     "imageTitles": [
       "当院の方法",
       "従来の方法"
+    ],
+    "instagramUrls": [
+      "https://www.instagram.com/p/DOq99U5krkZ/embed",
+      "https://www.instagram.com/p/DP6BJx1Ev6V/embed",
+      "https://www.instagram.com/p/DBYsVcMztTE/embed"
     ]
   },
   "sekkai_ganken": {
@@ -51,7 +56,7 @@
     "downtime": "強い腫れや内出血が1〜2週間程度。抜糸は約1週間後に行います。完成までは数ヶ月を要します（スカーレス法は表面の傷跡がないため術後すぐからメイク可能などダウンタイムが異なります）。",
     "risks": "腫れ・内出血・左右差・傷跡・違和感など",
     "details": "ご希望のデザインに合わせて、皮膚側からの一般的な切開法（二重全切開・眼瞼下垂）のほか、傷跡が表面に残らないスカーレス法など、患者様に最適な術式をご提案いたします。",
-    "priceSimulation": "①【各種プランと料金（モニター価格 / 通常価格）】<br/>②二重全切開（通常切開 / スカーレス切開 どれでも同額）：¥180,000 / ¥270,000<br/>③眼瞼下垂（通常切開 / スカーレス切開 どれでも同額）：¥220,000 / ¥330,000<br/>・※当院では表面に傷が目立たない独自のスカーレス法をメインで推奨しております。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">二重全切開</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">通常切開 / スカーレス切開</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥180,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥270,000)</span></div>\n  </li>\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">眼瞼下垂</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">通常切開 / スカーレス切開</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥220,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥330,000)</span></div>\n  </li>\n</ul>\n<div style=\"font-size: 0.85rem; color: #666; margin-top: 0.8rem; background: #fdfdf9; padding: 4px 10px; border-radius: 4px; display: inline-block;\">※当院ではスカーレス法をメインで推奨しております</div>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -76,6 +81,10 @@
     ],
     "imagePaths": [
       "/diag_incision.png"
+    ],
+    "instagramUrls": [
+      "https://www.instagram.com/p/DPVbfPXkkBH/embed",
+      "https://www.instagram.com/p/DBYsVcMztTE/embed"
     ]
   },
   "ganken_masaki": {
@@ -90,7 +99,7 @@
     "downtime": "腫れは数日程度。内出血が1週間程度残ることがありますがメイクでカバー可能です。コンタクトレンズは違和感がなければ数日後から着用できます。",
     "risks": "内出血・左右差・眼瞼下垂の再発・一時的な違和感など",
     "details": "切開を行わず、まぶたの裏側から専用の糸で目を開ける筋肉を縫い縮めて補強します。表面に傷ができないため抜糸も不要です。",
-    "priceSimulation": "【料金内容】<br/>①切らない眼瞼下垂（真崎式）：モニター価格 ¥100,000 / 通常価格 ¥120,000",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">切らない眼瞼下垂（真崎式）</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥100,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥120,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -129,6 +138,7 @@
     "downtime": "腫れは1〜2週間程度。抜糸まで（約1週間後）は糸がついた状態になります。内出血は1〜2週間程度で消失します。",
     "risks": "内出血・腫れ・左右差・わずかな傷跡・へこみなど",
     "details": "まぶたの目立たない部分を数ミリ切開し、適量の眼窩脂肪を丁寧に取り除きます。切開創は極めて小さく縫合するため、傷跡はほとんど目立ちません。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">上瞼脂肪とり</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">埋没法との同時施術で追加可能</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥20,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥40,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -156,18 +166,14 @@
     ]
   },
   "mayushita_sekka": {
-    "catchphrase": "自然な印象を変えずに、重い上まぶたのたるみを改善",
+    "catchphrase": "",
     "overview": "眉毛の下のラインに沿って余分な皮膚と脂肪を切除する手術です。ご自身の元々の二重ラインや目の形を変えずに、若々しくスッキリした目元を取り戻すことができます。傷跡も眉毛に隠れて目立ちにくくなります。",
-    "targets": [
-      "加齢によるまぶたのたるみが少し気になってきた方",
-      "目の形を変えずに若返りたい方",
-      "二重幅が狭くなってきた方"
-    ],
-    "imagePath": "/menu_double.png",
+    "targets": [],
+    "imagePath": "/menu_brow.png",
     "downtime": "腫れや内出血は1〜2週間程度。切開部に糸が付き、術後約1週間で抜糸を行います。傷跡の赤みは数ヶ月で馴染んでいきます。",
-    "risks": "腫れ・内出血・左右差・傷跡の赤みや盛り上がり・感覚鈍麻など",
-    "details": "眉毛のすぐ下のラインに沿って切開し、余剰な皮膚や眼輪筋の一部を切除します。丁寧に中縫いを行い、傷跡が眉に隠れて最も目立たなくなるよう縫合します。",
-    "priceSimulation": "【料金内容】<br/>①眉下切開：モニター価格 ¥120,000 / 通常価格 ¥144,000",
+    "risks": "腫れ・内出血・左右差・傷跡の赤みや突っ張り・感覚鈍麻など",
+    "details": "・顕微鏡下での縫合\nゆえクリではマイクロサージェリーで使われる顕微鏡や器具を用いて、中縫い・外縫いを行っています。肉眼では確認しにくい組織の層を正確に合わせることで、傷跡がより綺麗に治癒し、眉毛のラインに自然に馴染みやすくなります。\n\n・ROOF / 眼窩脂肪 / 眼輪筋の処理も費用に含まれます\nまぶたの厚みの原因となるROOF（眼窩隔膜前脂肪）、眼窩脂肪、肥厚した眼輪筋の切除やタッキングは、すべて施術費用に含まれています。必要と判断した場合に適宜行いますので、追加料金は発生しません。\n\n・傷跡へのこだわり\n眉毛の中の下縁ギリギリを切開し、毛根の走行を考慮した角度で切開することで、術後に眉毛が傷跡を覆い隠しやすいデザインにしています。顕微鏡下での精密な縫合と合わせて、傷跡の目立ちにくさを最大限追求しています。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">眉下切開</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥120,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥240,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -207,7 +213,7 @@
     "downtime": "腫れは数日程度と少なめですが、抜糸まで約1週間糸が付きます。傷跡の赤みや硬さが引くまでに1〜3ヶ月程度要します（メイクでカバー可能）。",
     "risks": "左右差・傷跡（肥厚性瘢痕）・後戻り・希望の形との相違など",
     "details": "目頭の皮膚をZ法やW法等の術式を患者様に合わせて選択し切開・縫合します。ミリ単位の調整で微細なバランスを保ちながら蒙古襞の張りを解除します。",
-    "priceSimulation": "【料金内容】<br/>①目頭切開：モニター価格 ¥80,000 / 通常価格 ¥96,000",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">目頭切開</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥80,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥96,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -246,6 +252,7 @@
     "downtime": "白目の充血や内出血が1〜2週間出ることがあります。抜糸までは約1週間です。大きな腫れは少ないですが、完成まで数ヶ月かかります。",
     "risks": "後戻り・左右差・白目の充血・結膜浮腫・傷跡など",
     "details": "目尻を外側に向かって切開し、靭帯の処理を行った上で理想の角度・広さを維持するように丁寧に縫合します。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">目尻切開</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥40,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥80,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -284,6 +291,7 @@
     "downtime": "腫れや内出血が1〜2週間程度。結膜浮腫（白目のブヨブヨ）が一時的に生じることがあります。",
     "risks": "後戻り・左右差・三白眼（下がりすぎ）・結膜浮腫・ドライアイなど",
     "details": "皮膚側または結膜（裏側）からアプローチし、下まぶたを下げる筋肉（CPF）を縫い縮めることで、黒目の外側のラインを下げて丸みのある目に仕上げます。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">タレ目形成（グラマラスライン）</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥80,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥160,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -308,6 +316,11 @@
     ],
     "imagePaths": [
       "/diag_tareme.png"
+    ],
+    "instagramUrls": [
+      "https://www.instagram.com/p/C7WBWMkOvZ7/embed",
+      "https://www.instagram.com/p/C6vxfq2veIO/embed",
+      "https://www.instagram.com/p/DBYsVcMztTE/embed"
     ]
   },
   "mejiri_jintai": {
@@ -322,6 +335,7 @@
     "downtime": "腫れや内出血は1〜2週間。結膜浮腫が生じやすいため、点眼薬の処方をいたします。約1週間で抜糸が必要です。",
     "risks": "後戻り・左右差・結膜浮腫・傷跡・まつ毛の一時的な脱毛など",
     "details": "外眼角靱帯（目尻の靭帯）を一度切り離し、眼窩の外側下方の骨膜へしっかりと再固定することで、物理的にフレームから目を拡大・タレ目化させる本格的な手術です。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">目尻靱帯移動（外眼角靱帯骨膜固定）</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥200,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥400,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -360,6 +374,7 @@
     "downtime": "強い腫れが1〜2週間。内出血も生じますが徐々に黄色くなり消退します。1週間後の抜糸が必要です。傷跡が完全に馴染むまでには半年程度かかります。",
     "risks": "腫れ・内出血・左右差・予定外重瞼線・睫毛の乱れなど",
     "details": "希望のラインに沿って皮膚を切開し、内部の眼輪筋やROOFと呼ばれる脂肪組織を必要に応じて処理します。丁寧に皮膚と挙筋・腱膜を縫い合わせることで、半永久的な二重を作成します。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">スカーレス二重全切開</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">傷跡が目立たない究極の全切開法</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥180,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥270,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -398,6 +413,7 @@
     "downtime": "強い腫れ・内出血が1〜2週間程度。抜糸まで約1週間です。完全に自然な状態になるまでには3〜6ヶ月ほどの経過を見ます。",
     "risks": "腫れ・内出血・左右差・過矯正（開きすぎ）・低矯正（開き不足）・ドライアイなど",
     "details": "二重の予定線で切開し、上眼瞼挙筋の腱膜を見つけ出します。腱膜をあるべき位置（瞼板）へ引き下げて縫い付け、目の開きを構造から改善する本格的な眼瞼下垂治療です。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">スカーレス眼瞼下垂</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">傷跡に配慮した切開眼瞼下垂治療</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥220,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥330,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -435,6 +451,7 @@
     "downtime": "腫れは切開法に比べ圧倒的に少なく数日〜1週間程度です。表面に糸や傷がないため翌日からフルメイクが可能です。",
     "risks": "内出血・左右差・再発・ドライアイ・ゴロゴロ感など",
     "details": "まぶたをひっくり返し、裏側の結膜からアプローチしてミュラー筋や挙筋腱膜を前転タッキング（縫い縮め）します。高度な専門性を要する手術です。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">裏側切開眼瞼下垂</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">皮膚を切らない眼瞼下垂治療</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥100,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥120,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -473,6 +490,7 @@
     "downtime": "腫れや内出血は数日〜1週間程度（個人差あり）。顔の表面に傷がないため当日からシャワー・洗顔可能、翌日からメイク可能です。",
     "risks": "内出血・腫れ・左右差・窪み（取りすぎ）・小ジワの増加・血腫など",
     "details": "下まぶたの裏側（あっかんべーをした赤い部分）を小切開し、3つある眼窩脂肪のコンパートメントからバランスよく適量の脂肪を取り除き、クマやたるみをフラットにします。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">経結膜脱脂</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">切らずに脂肪取り</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥80,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥160,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -511,6 +529,7 @@
     "downtime": "腫れ・内出血は1〜2週間程度。脂肪の剥離範囲が広いため、脱脂単体よりダウンタイムは長引く傾向があります。",
     "risks": "内出血・白目の充血や浮腫・左右差・効果の個人差・しこりなど",
     "details": "結膜側から切開し、眼窩脂肪を温存したまま下方に引き出し、頬の骨の上の溝（凹み）を埋めるように固定・再配置します。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">裏ハムラ法</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">まぶたの裏から脂肪移動</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥140,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥280,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -548,6 +567,7 @@
     "downtime": "強い腫れが1〜2週間。抜糸まで1週間かかります。傷跡は数ヶ月かけて目立たなくなります。",
     "risks": "腫れ・内出血・左右差・外反（あっかんべー状態）・傷跡の赤みなど",
     "details": "下まつ毛の際を皮膚切開し、眼窩脂肪の再補置（ハムラ法）を行い、その後余剰な皮膚を切除して眼輪筋を外側骨膜へ吊り上げ固定し、縫合します。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">表ハムラ法</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">皮膚切開での脂肪移動＋眼輪筋等処置</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥180,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥360,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -585,6 +605,7 @@
     "downtime": "腫れと内出血は1〜2週間程度。抜糸は約1週間後に行います。テーピングが必要な場合があります。",
     "risks": "内出血・腫れ・左右差・傷跡・一時的な外反など",
     "details": "目の下の皮膚のたるみを測定し、下まつ毛の直下で切開・切除します。丁寧に縫合を行うことで皮膚のハリを取り戻します。",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">下まぶたたるみ取り</span></div>\n    <div style=\"font-size: 0.9rem; color: #666; margin-bottom: 0.4rem;\">下眼瞼皮膚除すう術</div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥100,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥200,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -618,11 +639,11 @@
       "逆さまつげ（睫毛内反症）の痛みや異物感にお悩みの方",
       "保険診療の手術での傷跡や不自然な仕上がりが心配な方"
     ],
-    "imagePath": "/menu_double.png",
+    "imagePath": "/menu_lash.png",
     "downtime": "腫れや内出血は1〜2週間程度。抜糸まで約1週間。完成までは3ヶ月以上要します。",
     "risks": "腫れ・内出血・傷跡・再発・左右差など",
     "details": "症状に応じて上まぶた・下まぶたの皮膚を切開し、まつ毛の生える向きを外側に向かわせるように眼輪筋や腱膜を操作・縫合します。",
-    "priceSimulation": "【料金内容】<br/>①逆さまつげ（切開）：モニター価格 ¥50,000 / 通常価格 ¥60,000",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">逆さまつげ（切開）</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥50,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥60,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -661,7 +682,7 @@
     "downtime": "白目の充血や内出血が1〜2週間程度。抜糸まで約1週間。完成までには数ヶ月かかります。",
     "risks": "後戻り・左右差・白目の充血・結膜浮腫・傷跡・違和感など",
     "details": "ご希望のデザインに合わせて、目尻切開のみ、タレ目形成のみ、または複合・靭帯移動など最適な術式をご提案いたします。",
-    "priceSimulation": "①【料金内容（モニター価格 / 通常価格）】<br/>②目尻切開のみ：¥40,000 / ¥80,000<br/>③タレ目形成（グラマラスライン）のみ：¥80,000 / ¥160,000<br/>④目尻切開 ＋ タレ目形成 複合：¥120,000 / ¥240,000<br/>⑤目尻靱帯移動（外眼角靱帯骨膜固定）：¥200,000 / ¥400,000",
+    "priceSimulation": "<div style=\"font-weight: bold; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;\">【メニュー・料金】</div>\n<ul style=\"list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;\">\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05);\">\n    <div style=\"font-weight: bold; font-size: 1.1rem; margin-bottom: 0.4rem;\"><span style=\"color: var(--color-button);\">目尻切開のみ</span></div>\n    <div style=\"font-size: 1.05rem; color: #333;\">モニター価格 <strong style=\"color: var(--color-accent); font-size: 1.25rem;\">¥40,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥80,000)</span></div>\n  </li>\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #ccd1d1;\">\n    <div style=\"font-weight: bold; font-size: 1.05rem; color: var(--color-text); margin-bottom: 0.4rem;\">タレ目形成（グラマラスライン）のみ</div>\n    <div style=\"font-size: 1rem; color: #333;\">モニター価格 <strong>¥80,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥160,000)</span></div>\n  </li>\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #ccd1d1;\">\n    <div style=\"font-weight: bold; font-size: 1.05rem; color: var(--color-text); margin-bottom: 0.4rem;\">目尻切開 ＋ タレ目形成 複合</div>\n    <div style=\"font-size: 1rem; color: #333;\">モニター価格 <strong>¥120,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥240,000)</span></div>\n  </li>\n  <li style=\"background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #ccd1d1;\">\n    <div style=\"font-weight: bold; font-size: 1.05rem; color: var(--color-text); margin-bottom: 0.4rem;\">目尻靱帯移動（外眼角靱帯骨膜固定）</div>\n    <div style=\"font-size: 1rem; color: #333;\">モニター価格 <strong>¥200,000</strong> <span style=\"font-size:0.9rem; color:#333;\">(通常 ¥400,000)</span></div>\n  </li>\n</ul>",
     "flow": [
       {
         "title": "ご予約・ご来院",
@@ -686,11 +707,16 @@
     ],
     "imagePaths": [
       "/diag_tareme.png"
+    ],
+    "instagramUrls": [
+      "https://www.instagram.com/p/C7WBWMkOvZ7/embed",
+      "https://www.instagram.com/p/C6s69BwPtGF/embed",
+      "https://www.instagram.com/p/DADZngPzXn2/embed"
     ]
   },
   "kuma_tori": {
     "catchphrase": "目の下のふくらみ・たるみを解消し、若々しく明るい目元へ",
-    "overview": "目の下の「クマ」や「たるみ」の原因となる眼窩脂肪の突出や皮膚のたるみを、症状に合わせて複数のアプローチ（脱脂・ハムラ法・皮膚除すう術など）から複合的に治療します。",
+    "overview": "目の下の「クマ」や「たるみ」の原因となる眼窩脂肪ヘルニア（眼窩脂肪の突出）や皮膚のたるみを、症状に合わせて複数のアプローチ（脱脂・ハムラ法・皮膚除すう術など）から複合的に治療します。",
     "targets": [
       "目の下のふくらみや影クマが気になる方",
       "疲れて見られたり実年齢より老けて見られる方",

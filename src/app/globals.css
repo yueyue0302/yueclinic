@@ -800,12 +800,12 @@ details[open] .faq-question::after {
 /* Floating Reservation Button */
 .floating-reservation {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: 90%;
-  max-width: 400px;
+  width: 70%;
+  max-width: 300px;
   display: flex;
   justify-content: center;
   pointer-events: none;
@@ -817,8 +817,8 @@ details[open] .faq-question::after {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.25);
   width: 100%;
@@ -841,7 +841,7 @@ details[open] .faq-question::after {
     width: auto;
   }
   .floating-reservation__btn {
-    padding: 1.2rem 3rem;
+    padding: 0.9rem 2.2rem;
   }
   .floating-reservation__btn:hover {
     transform: translateY(-4px);

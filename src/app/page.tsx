@@ -100,7 +100,6 @@ export default function Home() {
       </section>
 
 
-
       {/* Access Section */}
       <section id="access" className="section bg-light" style={{ paddingBottom: '4rem', paddingTop: '1.25rem' }}>
         <h2 className="section__title" style={{ marginBottom: '1.5rem' }}>アクセス</h2>

@@ -1,5 +1,14 @@
-import { getColumnData } from '../../../lib/columns';
+import { getColumnData, getSortedColumnsData } from '../../../lib/columns';
 import Link from 'next/link';
+
+export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  const posts = getSortedColumnsData();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   // Read route params properly before using in App Router

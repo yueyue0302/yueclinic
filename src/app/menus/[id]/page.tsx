@@ -66,13 +66,14 @@ export default async function MenuDetail({ params }: { params: { id: string } })
         <h1 style={{ marginTop: 0, marginBottom: '0.5rem', fontSize: '2rem', color: 'var(--color-button)' }}>
           {itemData.name.replace(/（.*）/g, '')}
           {resolvedParams.id === 'futae_maibotsu' && <span style={{fontSize: '1rem', marginLeft: '0.4rem', fontWeight: '500', display: 'inline-block', color: '#555'}}>（切らずに糸で二重を作る方法）</span>}
+          {resolvedParams.id === 'mayushita_sekka' && <span style={{fontSize: '1rem', marginLeft: '0.4rem', fontWeight: '500', display: 'inline-block', color: '#555'}}>（眉毛のすぐ下でたるみを切り取る方法）</span>}
         </h1>
         <div style={{ fontSize: '1.4rem', fontWeight: 'bold', color: 'var(--color-text)' }}>
           ¥{itemData.price.toLocaleString()}<span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'normal', marginLeft: '0.4rem' }}>(モニター価格)</span>
         </div>
       </div>
 
-      {/* Hero Illustration */}
+      {/* Hero Illustration - temporarily hidden
       <div style={{ position: 'relative', width: '100%', marginBottom: '3rem', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#fbfaf8', border: '1px solid var(--color-accent-light)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
         
         <div style={{ display: 'flex', width: '100%', height: '350px', padding: '1rem', gap: '1rem' }}>
@@ -96,6 +97,7 @@ export default async function MenuDetail({ params }: { params: { id: string } })
           ))}
         </div>
       </div>
+      */}
       
       <div className="column-post__content" style={{ background: '#fff', padding: '0', borderRadius: '12px' }}>
         <h2 style={{ fontSize: '1.4rem', color: 'var(--color-button)', borderLeft: '4px solid var(--color-button)', paddingLeft: '1rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
