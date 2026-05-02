@@ -44,6 +44,11 @@ export default function Home() {
             >インスタグラムDM</a>
             からお願いいたします
           </p>
+          <p style={{ margin: '0.6rem 0 0', fontSize: '0.85rem', opacity: 0.95, lineHeight: '1.7' }}>
+            予約可能日↓<br />
+            5月 8, 9, 15, 16, 26, 30<br />
+            6月 3, 4, 6, 13, 20
+          </p>
         </div>
       </section>
       {/* ========== /一時バナー ========== */}
