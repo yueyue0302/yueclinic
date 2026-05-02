@@ -11,6 +11,43 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
+      {/* ========== 一時バナー：サイト整備中のお知らせ（来月削除予定） ========== */}
+      <section style={{
+        maxWidth: '800px',
+        margin: '1.5rem auto 0',
+        padding: '0 20px',
+      }}>
+        <div style={{
+          background: 'linear-gradient(135deg, #d4a574 0%, #c4956a 100%)',
+          borderRadius: '12px',
+          padding: '1.2rem 1.5rem',
+          textAlign: 'center',
+          color: '#fff',
+          boxShadow: '0 4px 16px rgba(196, 149, 106, 0.35)',
+          lineHeight: '1.8',
+        }}>
+          <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '0.08em', opacity: 0.9 }}>
+            2026年5月　現在サイト整備中
+          </p>
+          <p style={{ margin: '0.4rem 0 0', fontSize: '1.05rem', fontWeight: 'bold' }}>
+            ご予約は
+            <a
+              href="https://www.instagram.com/dr_kobayashi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: '#fff',
+                textDecoration: 'underline',
+                textDecorationThickness: '2px',
+                textUnderlineOffset: '3px',
+              }}
+            >インスタグラムDM</a>
+            からお願いいたします
+          </p>
+        </div>
+      </section>
+      {/* ========== /一時バナー ========== */}
+
       {/* Features Section */}
       <section className="section fade-in" style={{ marginTop: '1rem', maxWidth: '800px', margin: '1rem auto 0', padding: '0 20px' }}>
         <h2 className="section__title" style={{ fontSize: '1.8rem', marginBottom: '1.5rem', textAlign: 'center' }}>ゆえクリの強み</h2>
