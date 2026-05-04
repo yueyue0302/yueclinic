@@ -27,7 +27,7 @@ export default function Doctors() {
             <div style={{ display: 'block', lineHeight: '1.8', color: '#444', fontSize: '1.05rem', textAlign: 'left' }}>
               <p style={{ marginBottom: '1.2rem', lineHeight: '1.8' }}>
                 yueclinicは、美容外科および眼形成の分野で修練を積んだ院長による「目元専門」のクリニックです。<br/>
-                大手クリニックのような流れ作業ではなく、まぶたという繊細な部位だからこそ、カウンセリングから施術、抜糸、アフターケアまで、<strong style={{ color: 'var(--color-button)' }}>院長が一貫して担当</strong>いたします。
+                大手クリニックのような流れ作業ではなく、手術は一日２人までに制限し十分な時間の中で、カウンセリングから施術、抜糸、アフターケアまで、<strong style={{ color: 'var(--color-button)' }}>院長が一貫して担当</strong>いたします。
               </p>
               <p style={{ marginBottom: '1.2rem', lineHeight: '1.8' }}>
                 過度な広告費などを抑えたミニマムな経営効率化により、通いやすい「適正価格」を実現しました。その一方で、美しい仕上がりを左右する極細の針・糸や、緻密な手術を可能にする<strong style={{ color: 'var(--color-button)' }}>「手術用顕微鏡」</strong>など、医療クオリティに直結する設備や機材には一切の妥協を許しません。（顕微鏡を導入しているクリニックは少ないです）
