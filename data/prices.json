@@ -42,6 +42,14 @@
           "price": 180000,
           "priceSuffix": "〜",
           "description": "通常の方法・スカーレス二重術"
+        },
+        {
+          "id": "tain_basshi",
+          "name": "他院の抜糸",
+          "price": 10000,
+          "priceSuffix": "〜",
+          "description": "目元・前額リフトの抜糸",
+          "fullWidth": true
         }
       ]
     }

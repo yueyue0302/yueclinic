@@ -18,7 +18,7 @@ export default function FAQ() {
         <details className="faq-item">
           <summary className="faq-question">予約の仕方がわからない</summary>
           <div className="faq-answer">
-            <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>公式LINE</a>からお願いいたします。LINEにて空き状況の確認やご予約が可能です。
+            <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>公式LINE</a>からお願いいたします。LINEにて空き状況の確認やご予約が可能です。<br />やり方がわからない場合のみ、<a href="https://www.instagram.com/dr_kobayashi" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>Instagramダイレクトメッセージ</a>からも可能です。
           </div>
         </details>
         <details className="faq-item">
