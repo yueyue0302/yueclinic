@@ -59,9 +59,9 @@ export default async function CaseDetail({ params }: { params: { id: string } })
         <Link href="/cases" className="btn btn--outline" style={{ marginRight: '1rem' }}>
           症例一覧へ戻る
         </Link>
-        <Link href="/#reserve" className="btn btn--primary">
+        <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
           この施術を予約する
-        </Link>
+        </a>
       </div>
     </article>
   );

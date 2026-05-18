@@ -187,9 +187,9 @@ export default async function MenuDetail({ params }: { params: { id: string } })
       </div>
       
       <div style={{ marginTop: '4rem', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-        <Link href="/#reserve" className="btn btn--primary" style={{ width: '100%', maxWidth: '300px' }}>
+        <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ width: '100%', maxWidth: '300px' }}>
           この施術を予約する
-        </Link>
+        </a>
         <Link href="/#price" className="btn btn--outline" style={{ width: '100%', maxWidth: '300px' }}>
           料金表へ戻る
         </Link>

@@ -225,7 +225,7 @@ export default function RootLayout({
         
         {/* Floating Reservation */}
         <div className="floating-reserve">
-          <a href="#reserve" className="btn btn--primary" style={{ boxShadow: '0 10px 30px rgba(168, 148, 117, 0.5)' }}>LINEで空き状況を確認</a>
+          <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ boxShadow: '0 10px 30px rgba(168, 148, 117, 0.5)' }}>LINEで空き状況を確認</a>
         </div>
 
       </body>

@@ -41,7 +41,7 @@ export default function Header() {
             Instagram (症例)
           </a>
           <Link href="/#access" onClick={() => setIsOpen(false)}>アクセス</Link>
-          <Link href="/#reserve" className="btn btn--reserve-small" onClick={() => setIsOpen(false)}>予約</Link>
+          <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--reserve-small" onClick={() => setIsOpen(false)}>予約</a>
           <Link href="/privacy" className="nav-sublink nav-sublink--privacy" onClick={() => setIsOpen(false)}>プライバシーポリシー</Link>
           <Link href="/cancel" className="nav-sublink nav-sublink--cancel" onClick={() => setIsOpen(false)}>予約キャンセル</Link>
         </nav>

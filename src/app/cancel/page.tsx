@@ -16,7 +16,7 @@ export default function CancelPolicy() {
       <div style={{ marginBottom: '2.5rem' }}>
         <h2 style={{ fontSize: '1.2rem', borderBottom: '1px solid var(--color-accent-light)', paddingBottom: '0.5rem', marginBottom: '1rem' }}>変更・キャンセルの期限について</h2>
         <p>
-          ご予約の変更およびキャンセルは、**ご予約日の3日前まで**に、<a href="#reserve" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>web</a>よりお願いいたします。
+          ご予約の変更およびキャンセルは、**ご予約日の3日前まで**に、<a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>公式LINE</a>よりお願いいたします。
         </p>
       </div>
 
