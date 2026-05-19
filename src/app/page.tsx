@@ -3,9 +3,23 @@ import pricesData from '../../data/prices.json';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+type HomePriceItem = {
+  id: string;
+  name: string;
+  price: number;
+  description?: string;
+  priceSuffix?: string;
+  fullWidth?: boolean;
+};
+
+type HomePriceCategory = {
+  id: string;
+  items: HomePriceItem[];
+};
+
 export const metadata: Metadata = {
   title: '目元専門の美容外科・眼形成',
-  description: 'yueclinic（ゆえクリニック）のトップページ。二重整形から高度な切開手術まで幅広く対応します。',
+  description: '市川・本八幡・船橋エリアで二重整形、クマ取り、眉下切開、眼瞼下垂を相談できる目元専門美容外科。院長一貫対応、ワンプライス制、鬼越駅徒歩約2分。',
 };
 
 export default function Home() {
@@ -50,14 +64,43 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" style={{ paddingTop: '1rem', paddingBottom: '3rem', maxWidth: '880px' }}>
+        <div style={{ background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '2rem' }}>
+          <h2 style={{ color: 'var(--color-button)', fontSize: '1.45rem', marginBottom: '1rem', textAlign: 'center' }}>
+            はじめて比較する方へ
+          </h2>
+          <p style={{ lineHeight: 1.9, color: '#444', marginBottom: '1.5rem' }}>
+            ゆえクリニックは、市川市・鬼越駅前の「目元専門」美容外科です。
+            二重埋没法、クマ取り、眉下切開、眼瞼下垂など、目元の悩みに絞って、院長がカウンセリングから施術、術後フォローまで一貫して担当します。
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.8rem', marginBottom: '1.5rem' }}>
+            {[
+              '目元専門の美容外科・眼形成',
+              '院長が最初から最後まで担当',
+              '手術用顕微鏡を使う精密手術',
+              'ワンメニュー・ワンプライス制',
+            ].map((text) => (
+              <div key={text} style={{ background: '#fff', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '0.9rem', color: '#444', textAlign: 'center', fontWeight: 600 }}>
+                {text}
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/reasons" className="btn btn--outline">
+              ゆえクリが選ばれる理由を見る
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Price Section */}
       <section id="price" className="section bg-light" style={{ paddingTop: '0.4rem', paddingBottom: '2.5rem' }}>
         <h2 className="section__title" style={{ marginBottom: '1rem' }}>メニュー・料金</h2>
         <div className="price-list fade-in">
-          {pricesData.categories.map((category) => (
+          {(pricesData.categories as HomePriceCategory[]).map((category) => (
             <div key={category.id} className="price-category">
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', columnGap: '0.8rem', rowGap: '0.4rem' }}>
-                {category.items.map((item, idx) => (
+                {category.items.map((item) => (
                   <Link href={`/menus/${item.id}`} key={item.id} className="price-item" style={{ 
                     padding: '0.8rem 0', 
                     textDecoration: 'none', 
@@ -65,7 +108,7 @@ export default function Home() {
                     display: 'flex', 
                     alignItems: 'center', 
                     borderBottom: '1px dotted var(--color-accent-light)',
-                    gridColumn: (item as any).fullWidth ? '1 / -1' : 'auto'
+                    gridColumn: item.fullWidth ? '1 / -1' : 'auto'
                   }}>
                     <div className="price-item__info" style={{ flex: 1, marginRight: '0.5rem' }}>
                       <div className="price-item__name" style={{ fontSize: '0.9rem', lineHeight: '1.3' }}>{item.name}</div>
@@ -73,7 +116,7 @@ export default function Home() {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                       <div className="price-item__price" style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>
-                        ¥{item.price.toLocaleString()}{/* @ts-ignore */}{(item as any).priceSuffix || ''}
+                        ¥{item.price.toLocaleString()}{item.priceSuffix || ''}
                       </div>
                       <div style={{ 
                         marginLeft: '0.4rem',

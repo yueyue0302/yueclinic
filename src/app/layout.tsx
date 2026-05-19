@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     template: '%s | yueclinic（ゆえクリニック）',
     default: 'yueclinic（ゆえクリニック）| 鬼越駅前の目元専門美容外科・眼形成',
   },
-  description: '千葉県市川市・鬼越駅徒歩2分。目元専門の美容外科「yueclinic」公式サイト。二重埋没法¥68,000〜、クマ取り¥80,000〜。眼形成修行医による高品質な目元整形を適正価格で。二重整形・眼瞼下垂・クマ取り・目頭目尻切開・タレ目形成。',
-  keywords: ['二重整形', '埋没法', '千葉', '市川', '美容外科', 'クマ取り', '眼瞼下垂', '目頭切開', '目尻切開', 'タレ目形成', 'グラマラスライン', '鬼越', '船橋', '本八幡', 'ゆえクリニック', 'yueclinic'],
+  description: '千葉県市川市・鬼越駅徒歩2分。目元専門の美容外科「yueclinic」公式サイト。二重埋没法¥68,000〜、クマ取り¥80,000〜。院長がカウンセリングから手術、術後フォローまで一貫対応。市川・本八幡・船橋エリアで二重整形・眼瞼下垂・クマ取り・眉下切開を相談できます。',
+  keywords: ['二重整形', '埋没法', '千葉', '市川', '美容外科', 'クマ取り', '眼瞼下垂', '眉下切開', '目頭切開', '目尻切開', 'タレ目形成', 'グラマラスライン', '鬼越', '船橋', '本八幡', '京成八幡', '下総中山', 'ゆえクリニック', 'yueclinic'],
   icons: {
     icon: '/favicon.ico',
   },
@@ -25,11 +25,19 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'yueclinic（ゆえクリニック）| 目元専門の美容外科',
-    description: '千葉県市川市・鬼越駅徒歩2分。目元専門の美容外科。二重埋没法¥68,000〜。',
+    description: '千葉県市川市・鬼越駅徒歩2分。目元専門の美容外科。院長一貫対応、ワンプライス制、二重埋没法¥68,000〜。',
     url: 'https://yueclinic.com',
     siteName: 'yueclinic（ゆえクリニック）',
     locale: 'ja_JP',
     type: 'website',
+    images: [
+      {
+        url: 'https://yueclinic.com/clinic_interior.png',
+        width: 1200,
+        height: 630,
+        alt: 'yueclinic（ゆえクリニック）院内',
+      },
+    ],
   },
   robots: {
     index: true,
@@ -74,10 +82,13 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MedicalClinic",
               "name": "yueclinic（ユエクリニック）",
+              "alternateName": ["ゆえクリニック", "ユエクリニック"],
               "image": "https://yueclinic.com/clinic_interior.png",
               "@id": "https://yueclinic.com",
               "url": "https://yueclinic.com",
-              "telephone": "",
+              "sameAs": [
+                "https://www.instagram.com/dr_kobayashi"
+              ],
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "北方1-9-14-2F",
@@ -104,10 +115,49 @@ export default function RootLayout({
                 "PlasticSurgery",
                 "Dermatology"
               ],
+              "areaServed": [
+                "市川市",
+                "本八幡",
+                "京成八幡",
+                "船橋市",
+                "下総中山",
+                "津田沼",
+                "千葉県"
+              ],
+              "availableService": [
+                {
+                  "@type": "MedicalProcedure",
+                  "name": "二重埋没法",
+                  "procedureType": "美容外科手術"
+                },
+                {
+                  "@type": "MedicalProcedure",
+                  "name": "クマ取り",
+                  "procedureType": "美容外科手術"
+                },
+                {
+                  "@type": "MedicalProcedure",
+                  "name": "眉下切開",
+                  "procedureType": "美容外科手術"
+                },
+                {
+                  "@type": "MedicalProcedure",
+                  "name": "眼瞼下垂手術",
+                  "procedureType": "美容外科手術"
+                }
+              ],
               "employee": {
                 "@type": "Physician",
-                "name": "小林佑紀"
+                "name": "小林佑紀",
+                "knowsAbout": [
+                  "美容外科",
+                  "眼形成",
+                  "二重整形",
+                  "眼瞼下垂",
+                  "クマ取り"
+                ]
               },
+              "slogan": "目元専門・院長一貫対応・ワンプライス制",
               "priceRange": "¥20,000〜"
             })
           }}

@@ -3,6 +3,10 @@ import { getSortedColumnsData } from '../../lib/columns';
 
 export const metadata = {
   title: '院長のつぶやき',
+  description: 'ゆえクリニック院長による、二重整形、クマ取り、眼瞼下垂、眉下切開、クリニック選び、料金、リスクに関する解説コラムです。',
+  alternates: {
+    canonical: '/columns',
+  },
 };
 
 export const dynamic = 'force-static';

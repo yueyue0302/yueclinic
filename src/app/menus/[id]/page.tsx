@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import pricesData from '../../../../data/prices.json';
 import menuDetailsData from '../../../../data/menuDetails.json';
 
@@ -13,7 +12,23 @@ interface PriceItem {
   id: string;
   name: string;
   price: number;
+  priceSuffix?: string;
   description?: string;
+}
+
+interface MenuDetails {
+  catchphrase: string;
+  overview?: string;
+  targets?: string[];
+  imagePath?: string;
+  imagePaths?: string[];
+  imageTitles?: string[];
+  downtime: string;
+  risks: string;
+  details: string;
+  instagramUrls?: string[];
+  priceSimulation?: string;
+  footerNote?: string;
 }
 
 // Define the static paths so Next.js knows what dynamic pages to build
@@ -30,8 +45,19 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   const itemData = allItems.find(item => item.id === resolvedParams.id);
   
   if (!itemData) return { title: 'メニュー詳細' };
+  const priceText = `¥${itemData.price.toLocaleString()}${itemData.priceSuffix || ''}`;
   return {
     title: `${itemData.name}`,
+    description: `${itemData.name}の料金はモニター価格${priceText}。市川・鬼越駅前の目元専門美容外科 yueclinic で、院長がカウンセリングから施術、術後フォローまで一貫して担当します。`,
+    alternates: {
+      canonical: `/menus/${itemData.id}`,
+    },
+    openGraph: {
+      title: `${itemData.name} | yueclinic`,
+      description: `${itemData.name}の料金、適応、ダウンタイム、リスクを解説します。`,
+      url: `https://yueclinic.com/menus/${itemData.id}`,
+      type: 'article',
+    },
   };
 }
 
@@ -49,7 +75,7 @@ export default async function MenuDetail({ params }: { params: { id: string } })
     );
   }
 
-  const details = (menuDetailsData as Record<string, any>)[itemData.id] || {
+  const defaultDetails: MenuDetails = {
     catchphrase: "経験豊富な専門医が自然な仕上がりと高い安全性を追求します。",
     overview: "当院では、専門の医師が手術用顕微鏡等を活用し緻密で丁寧な施術を行います。",
     targets: ["効果を実感しつつ、費用を抑えたい方", "自然な仕上がりを求める方"],
@@ -58,9 +84,49 @@ export default async function MenuDetail({ params }: { params: { id: string } })
     risks: "腫れ、内出血、左右差、感染等。",
     details: "局所麻酔等を使用し、丁寧に施術を行います。"
   };
+  const details: MenuDetails = {
+    ...defaultDetails,
+    ...((menuDetailsData as Record<string, Partial<MenuDetails>>)[itemData.id] || {}),
+  };
+
+  const procedureStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalProcedure',
+    name: itemData.name,
+    url: `https://yueclinic.com/menus/${itemData.id}`,
+    description: details.catchphrase,
+    howPerformed: details.details,
+    preparation: '診察・カウンセリングで適応、リスク、ダウンタイム、費用を確認します。',
+    possibleComplication: details.risks,
+    followup: details.downtime,
+    provider: {
+      '@type': 'MedicalClinic',
+      name: 'yueclinic（ゆえクリニック）',
+      url: 'https://yueclinic.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '北方1-9-14-2F',
+        addressLocality: '市川市',
+        addressRegion: '千葉県',
+        postalCode: '272-0815',
+        addressCountry: 'JP',
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      price: itemData.price,
+      priceCurrency: 'JPY',
+      url: `https://yueclinic.com/menus/${itemData.id}`,
+      availability: 'https://schema.org/InStock',
+    },
+  };
 
   return (
     <article className="section fade-in" style={{ padding: '0 20px', maxWidth: '800px', margin: '2rem auto 5rem' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureStructuredData) }}
+      />
 
       <div style={{ marginBottom: '2rem' }}>
         <h1 style={{ marginTop: 0, marginBottom: '0.5rem', fontSize: '2rem', color: 'var(--color-button)' }}>

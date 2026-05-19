@@ -58,7 +58,7 @@ a:hover {
 .header__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,13 +74,14 @@ a:hover {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(0.75rem, 1.1vw, 1.4rem);
 }
 
 .header__nav a {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .nav-sublink {
@@ -93,7 +94,7 @@ a:hover {
 .btn--reserve-small {
   background: var(--color-button);
   color: white !important;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.15rem;
   border-radius: 30px;
   transition: opacity 0.3s;
 }
@@ -586,7 +587,7 @@ a:hover {
   transform-origin: 1px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
   /* Hide normal header links on mobile */
   .header__nav {
     display: none;
@@ -601,7 +602,8 @@ a:hover {
     -webkit-backdrop-filter: blur(10px);
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.15rem;
+    padding: 4rem 1rem 2rem;
     z-index: 100;
   }
   
@@ -612,7 +614,7 @@ a:hover {
   
   /* Enlarge links for mobile tap */
   .header__nav a {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
   
   /* Show hamburger button */
@@ -627,6 +629,10 @@ a:hover {
 
   .nav-sublink--privacy { margin-top: -1.3rem; }
   .nav-sublink--cancel { margin-top: -1.3rem; }
+}
+
+body:has(.header__nav.is-open) .floating-reserve {
+  display: none;
 }
 
 /* Flow Section */
@@ -769,7 +775,8 @@ details[open] .faq-question::after {
 .header__logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  flex-shrink: 0;
 }
 .header__logo {
   display: flex !important;
@@ -794,6 +801,11 @@ details[open] .faq-question::after {
   color: var(--color-text);
   border-left: 1px solid var(--color-accent-light);
   padding-left: 1rem;
+}
+@media (max-width: 1180px) {
+  .header__catchphrase {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .header__catchphrase {

@@ -1,9 +1,11 @@
-import Header from '../../components/Header';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '医師紹介・ゆえクリの強み',
-  description: 'yueclinicの院長紹介と、美容外科×眼形成の専門性など、当クリニックの強みをご紹介いたします。',
+  description: 'yueclinic院長 小林佑紀の経歴と、目元専門、院長一貫対応、手術用顕微鏡、ワンプライス制など当院の強みをご紹介します。',
+  alternates: {
+    canonical: '/doctors',
+  },
 };
 
 export default function Doctors() {

@@ -1,7 +1,11 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'よくある質問',
+  description: 'ゆえクリニックの予約、当日施術、モニター、支払い、未成年の施術、他院修正、料金、通院エリアに関するよくある質問です。',
+  alternates: {
+    canonical: '/faq',
+  },
 };
 
 export default function FAQ() {
@@ -52,6 +56,42 @@ export default function FAQ() {
           <summary className="faq-question">医療ローンでの支払いは可能ですか？</summary>
           <div className="faq-answer">
             医療ローンのお取り扱いはございません。分割をご希望の場合は、お手持ちのクレジットカードの分割払いをご利用ください。
+          </div>
+        </details>
+        <details className="faq-item">
+          <summary className="faq-question">ゆえクリニックはどんな人に向いていますか？</summary>
+          <div className="faq-answer">
+            市川・本八幡・船橋エリアで、目元の手術を院長に直接相談したい方に向いています。二重埋没法、クマ取り、眉下切開、眼瞼下垂など、目元に絞って診察・施術を行っています。
+          </div>
+        </details>
+        <details className="faq-item">
+          <summary className="faq-question">大手クリニックとの違いは何ですか？</summary>
+          <div className="faq-answer">
+            幅広い美容施術を多数扱うのではなく、目元の美容外科・眼形成に診療領域を絞っている点です。カウンセリングから施術、抜糸、アフターケアまで院長が一貫して担当し、同一施術内で複数ランクを作らないワンプライス制を大切にしています。
+          </div>
+        </details>
+        <details className="faq-item">
+          <summary className="faq-question">表示料金以外に追加費用はありますか？</summary>
+          <div className="faq-answer">
+            基本的に針糸代・麻酔代・保証など、施術に必要なものはメニュー料金に含めています。診察で別の施術が適していると判断した場合は、理由と総額を事前に説明します。
+          </div>
+        </details>
+        <details className="faq-item">
+          <summary className="faq-question">他院で受けた二重埋没法やクマ取りの相談もできますか？</summary>
+          <div className="faq-answer">
+            はい、可能です。まぶたや目の下の状態を診察したうえで、抜糸、再埋没、切開、経過観察など、必要な選択肢を説明します。無理に当日施術をすすめることはありません。
+          </div>
+        </details>
+        <details className="faq-item">
+          <summary className="faq-question">市川・本八幡・船橋から通いやすいですか？</summary>
+          <div className="faq-answer">
+            当院は京成本線「鬼越駅」から徒歩約2分です。京成八幡（本八幡）から1駅、京成船橋から3駅で、術後の経過観察にも通いやすい立地です。
+          </div>
+        </details>
+        <details className="faq-item">
+          <summary className="faq-question">どんな場合は他院や保険診療を検討した方がよいですか？</summary>
+          <div className="faq-answer">
+            急にまぶたが下がった、ものが二重に見える、強い頭痛を伴うなど、神経や全身疾患が疑われる場合は、先に眼科・脳神経内科などでの精査をおすすめします。また、保険適用での眼瞼下垂治療をご希望の場合、当院は自由診療のため保険診療には対応していません。
           </div>
         </details>
       </div>

@@ -1,16 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-
-  // Close menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   return (
     <header className="header">
@@ -33,6 +26,7 @@ export default function Header() {
         </button>
         <nav className={`header__nav ${isOpen ? 'is-open' : ''}`}>
           <Link href="/doctors#doctors" onClick={() => setIsOpen(false)}>医師紹介</Link>
+          <Link href="/reasons" onClick={() => setIsOpen(false)}>選ばれる理由</Link>
           <Link href="/#price" onClick={() => setIsOpen(false)}>メニュー・料金</Link>
           <Link href="/faq" onClick={() => setIsOpen(false)}>よくある質問</Link>
           <Link href="/columns" onClick={() => setIsOpen(false)}>院長のつぶやき</Link>
