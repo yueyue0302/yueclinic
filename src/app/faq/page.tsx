@@ -12,7 +12,7 @@ export default function FAQ() {
         <details className="faq-item">
           <summary className="faq-question">予約なしで来院は可能ですか？</summary>
           <div className="faq-answer">
-            当院は完全予約制になっております。当日web予約が可能な場合もありますので、web予約にて空き状況をご確認後、ご予約ください。
+            当院は完全予約制になっております。当日予約が可能な場合もありますので、<a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>LINE予約</a>にて空き状況をご確認後、ご予約ください。
           </div>
         </details>
         <details className="faq-item">
@@ -24,7 +24,7 @@ export default function FAQ() {
         <details className="faq-item">
           <summary className="faq-question">カウンセリング当日に施術は受けられますか？</summary>
           <div className="faq-answer">
-            はい、予約状況によりご案内可能です。web予約時にご指定ください。
+            はい、予約状況によりご案内可能です。<a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'var(--color-button)', fontWeight: 'bold' }}>LINE予約</a>時にご指定ください。
           </div>
         </details>
         <details className="faq-item">
