@@ -19,7 +19,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 |------|-----|
 | フレームワーク | Next.js 16 (App Router) |
 | ホスティング | Cloudflare Workers (`@opennextjs/cloudflare`) |
-| Node.js | v22（`.nvmrc` は `20` だが CI は `22` を使用） |
+| Node.js | v22（`.nvmrc` / CI ともに `22`） |
 | リポジトリ | `https://github.com/yueyue0302/yueclinic.git` |
 | ブランチ | `main` のみ使用 |
 | 本番URL | https://yueclinic.com |
@@ -160,7 +160,7 @@ git push origin main
 1. **`vercel.json` は不要** — Vercelは使っていない。Cloudflare Workers でデプロイしている
 2. **`pages/` ディレクトリを作らない** — App Router (`src/app/`) のみ使用
 3. **予約リンクを `#reserve` や他のURLにしない** — 必ず `https://lin.ee/VqhBREq` を使う
-4. **`.nvmrc` の `20` を信用しない** — CI は Node.js 22 を使用している
+4. **`data/` のJSONを編集したら必ずバリデーションする** — 壊れたJSONはビルドエラーになる
 5. **`npm install` で新しい依存を追加する際は慎重に** — Cloudflare Workers の互換性に注意
 
 ### 気をつけること
@@ -183,3 +183,117 @@ git push origin main
 | 公式LINE | https://lin.ee/VqhBREq |
 | Instagram | @yueclinic |
 | 診療内容 | 美容外科（目元専門） |
+
+---
+
+## 🤖 Codex向け：HP自動更新ガイド
+
+### 基本原則
+
+**`main` ブランチに push するだけで本番サイトが自動更新される。**
+Vercel は使っていない。GitHub Actions → Cloudflare Workers の自動デプロイ。
+
+### ステップバイステップ：コード変更 → 本番反映
+
+```bash
+# 1. 変更を加える（ファイル編集）
+
+# 2. JSONを編集した場合はバリデーション（必須）
+node -e "JSON.parse(require('fs').readFileSync('data/prices.json','utf8')); JSON.parse(require('fs').readFileSync('data/menuDetails.json','utf8')); console.log('JSON OK')"
+
+# 3. ビルド確認（推奨だが省略可）
+npm run build
+
+# 4. コミット＆プッシュ（これだけで本番に反映される）
+git add -A
+git commit -m "feat: 変更内容の説明"
+git push origin main
+
+# 5. デプロイ確認（1〜2分後に反映）
+#    GitHub Actions のログで確認可能
+#    https://github.com/yueyue0302/yueclinic/actions
+```
+
+### 更新パターン別ガイド
+
+#### パターン1: 料金変更
+
+**編集ファイル**: `data/prices.json` + `data/menuDetails.json`
+
+```bash
+# prices.json の該当メニューの price を変更
+# menuDetails.json の該当メニューの priceSimulation 内の金額を変更
+# 両方を必ず同時に変更すること（不整合に注意）
+```
+
+#### パターン2: 新メニュー追加
+
+1. `data/prices.json` の `items` 配列に新アイテムを追加
+2. `data/menuDetails.json` にメニューキーを追加（既存メニューの構造をコピーして修正）
+3. `prices.json` の `id` と `menuDetails.json` のキー名が一致していること
+
+```json
+// prices.json のアイテム例
+{
+  "id": "menu_id_here",
+  "name": "メニュー名",
+  "price": 100000,
+  "description": "簡単な説明"
+}
+```
+
+#### パターン3: FAQの追加・修正
+
+**編集ファイル**: `src/app/faq/page.tsx`
+
+```tsx
+{/* FAQアイテムの追加テンプレート */}
+<details className="faq-item">
+  <summary className="faq-question">質問テキスト</summary>
+  <div className="faq-answer">
+    回答テキスト
+  </div>
+</details>
+```
+
+#### パターン4: コラム記事追加
+
+1. `content/columns/` に新しいMarkdownファイルを作成
+2. `data/columns.json` にメタデータを追加
+3. ビルド時に自動変換される（`scripts/generate-columns.mjs`）
+
+#### パターン5: テキスト・文言の修正
+
+- 該当の `.tsx` ファイルを直接編集
+- 共通レイアウト（Header, Footer, 予約ボタン）: `src/app/layout.tsx`
+- メニュー詳細ページの文言: `data/menuDetails.json`
+
+### JSON編集時の重要ルール
+
+`menuDetails.json` の `priceSimulation` フィールドはインラインHTMLが含まれる。
+
+```
+⚠️ ダブルクォートは \" でエスケープ
+⚠️ 改行は \n で表記
+⚠️ < > は そのまま使用可能（JSONの値内では問題ない）
+⚠️ 編集後は必ず node -e "JSON.parse(...)" でバリデーション
+```
+
+### 予約リンクの統一ルール
+
+サイト内のすべての予約・LINE関連リンクは以下に統一：
+
+```
+https://lin.ee/VqhBREq
+```
+
+target="_blank" rel="noopener noreferrer" を必ず付与。
+
+### デプロイが失敗した場合
+
+1. GitHub Actions のログを確認: https://github.com/yueyue0302/yueclinic/actions
+2. よくある原因:
+   - JSONの構文エラー → `node -e` でバリデーション
+   - TypeScriptの型エラー → `npm run build` で事前チェック
+   - Cloudflare API の一時障害 → 再push or 手動re-run
+
