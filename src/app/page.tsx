@@ -2,6 +2,7 @@ import Image from 'next/image';
 import pricesData from '../../data/prices.json';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { clinicGoogleMapsEmbedUrl, clinicGoogleMapsUrl } from '../lib/clinicMap';
 
 type HomePriceItem = {
   id: string;
@@ -154,11 +155,17 @@ export default function Home() {
         </div>
         <div className="map-container hover-up">
           <iframe
-            src="https://maps.google.co.jp/maps?q=yue+clinic%E3%80%90%E3%83%A6%E3%82%A8%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF%E3%80%91&z=17&output=embed"
+            src={clinicGoogleMapsEmbedUrl}
             allowFullScreen={false}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="yueclinic（ユエクリニック）の地図"
           ></iframe>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '1rem' }} className="fade-in">
+          <a href={clinicGoogleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+            Googleマップでyueclinicを開く
+          </a>
         </div>
         <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'var(--color-button)', lineHeight: '1.6', textAlign: 'center' }} className="fade-in">
           改札出て右、線路を渡り、薬局の左の青っぽいビルです。<br/>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { clinicGoogleMapsEmbedUrl, clinicGoogleMapsUrl } from '../../lib/clinicMap';
 
 const reserveUrl = 'https://lin.ee/VqhBREq';
 
@@ -112,12 +113,17 @@ export default function AccessPage() {
         </h2>
         <div className="map-container hover-up">
           <iframe
-            src="https://maps.google.co.jp/maps?q=yue+clinic%E3%80%90%E3%83%A6%E3%82%A8%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF%E3%80%91&z=17&output=embed"
+            src={clinicGoogleMapsEmbedUrl}
             allowFullScreen={false}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="yueclinic（ゆえクリニック）の地図"
           />
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+          <a href={clinicGoogleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+            Googleマップでyueclinicを開く
+          </a>
         </div>
       </section>
 
