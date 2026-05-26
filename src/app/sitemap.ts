@@ -3,7 +3,7 @@ import columnsData from '../../data/columns.json';
 import pricesData from '../../data/prices.json';
 
 const BASE_URL = 'https://yueclinic.com';
-const UPDATED_AT = new Date('2026-05-19');
+const UPDATED_AT = new Date('2026-05-26');
 
 type Column = {
   slug: string;
@@ -21,6 +21,7 @@ type PriceCategory = {
 const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/`, lastModified: UPDATED_AT, changeFrequency: 'weekly', priority: 1 },
   { url: `${BASE_URL}/reasons`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.95 },
+  { url: `${BASE_URL}/access`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.9 },
   { url: `${BASE_URL}/doctors`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.9 },
   { url: `${BASE_URL}/faq`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.85 },
   { url: `${BASE_URL}/columns`, lastModified: UPDATED_AT, changeFrequency: 'weekly', priority: 0.8 },

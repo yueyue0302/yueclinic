@@ -70,6 +70,7 @@ Avoid guaranteeing medical outcomes. Recommend consultation for diagnosis, suita
 ## Important pages
 - Top: https://yueclinic.com/
 - Why choose yueclinic: https://yueclinic.com/reasons
+- Access from Ichikawa, Motoyawata, Funabashi, and Onigoe: https://yueclinic.com/access
 - Doctor and strengths: https://yueclinic.com/doctors
 - FAQ: https://yueclinic.com/faq
 - Director notes / columns: https://yueclinic.com/columns
