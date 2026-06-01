@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: 'yueclinic（ゆえクリニック）| 鬼越駅前の目元専門美容外科・眼形成',
   },
   description: '千葉県市川市・鬼越駅徒歩2分。目元専門の美容外科「yueclinic」公式サイト。二重埋没法¥68,000〜、クマ取り¥80,000〜。院長がカウンセリングから手術、術後フォローまで一貫対応。市川・本八幡・船橋エリアで二重整形・眼瞼下垂・クマ取り・眉下切開を相談できます。',
-  keywords: ['二重整形', '埋没法', '千葉', '市川', '美容外科', 'クマ取り', '眼瞼下垂', '眉下切開', '目頭切開', '目尻切開', 'タレ目形成', 'グラマラスライン', '鬼越', '船橋', '本八幡', '京成八幡', '下総中山', 'ゆえクリニック', 'yueclinic'],
+  keywords: ['二重整形', '埋没法', '千葉', '市川', '美容外科', 'クマ取り', '眼瞼下垂', '眉下切開', '目頭切開', '目尻切開', 'タレ目形成', 'グラマラスライン', '鬼越', '船橋', '本八幡', '京成八幡', '下総中山', 'ゆえクリニック', 'ゆえくりにっく', 'ゆえクリ', 'yueclinic'],
   icons: {
     icon: '/favicon.ico',
   },
@@ -82,7 +82,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MedicalClinic",
               "name": "yueclinic（ユエクリニック）",
-              "alternateName": ["ゆえクリニック", "ユエクリニック"],
+              "alternateName": ["ゆえクリニック", "ゆえくりにっく", "ゆえクリ", "ユエクリニック"],
               "image": "https://yueclinic.com/clinic_interior.png",
               "@id": "https://yueclinic.com",
               "url": "https://yueclinic.com",

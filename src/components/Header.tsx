@@ -27,7 +27,7 @@ export default function Header() {
         <nav className={`header__nav ${isOpen ? 'is-open' : ''}`}>
           <Link href="/doctors#doctors" onClick={() => setIsOpen(false)}>医師紹介</Link>
           <Link href="/reasons" onClick={() => setIsOpen(false)}>選ばれる理由</Link>
-          <Link href="/#price" onClick={() => setIsOpen(false)}>メニュー・料金</Link>
+          <Link href="/prices" onClick={() => setIsOpen(false)}>メニュー・料金</Link>
           <Link href="/faq" onClick={() => setIsOpen(false)}>よくある質問</Link>
           <Link href="/columns" onClick={() => setIsOpen(false)}>院長のつぶやき</Link>
           <a href="https://www.instagram.com/dr_kobayashi" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#c13584' }}>

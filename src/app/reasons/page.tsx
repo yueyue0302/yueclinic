@@ -203,7 +203,7 @@ export default function ReasonsPage() {
         <a href={reserveUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
           LINEで空き状況を確認
         </a>
-        <Link href="/#price" className="btn btn--outline">
+        <Link href="/prices" className="btn btn--outline">
           メニュー・料金を見る
         </Link>
       </div>

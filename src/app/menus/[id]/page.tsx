@@ -46,9 +46,27 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   
   if (!itemData) return { title: 'メニュー詳細' };
   const priceText = `¥${itemData.price.toLocaleString()}${itemData.priceSuffix || ''}`;
+  const priceLabel = itemData.id === 'tain_basshi' ? '定価' : 'モニター価格';
+  if (itemData.id === 'futae_maibotsu') {
+    return {
+      title: '二重埋没法｜自然癒着法6往復・症例数5,000件',
+      description:
+        '市川・本八幡・船橋エリアで二重埋没法を相談するならyueclinic。2点留めや従来の自然癒着法より固定範囲と力の分散を重視した自然癒着法6往復。症例数5,000件、モニター価格¥68,000。',
+      alternates: {
+        canonical: '/menus/futae_maibotsu',
+      },
+      openGraph: {
+        title: '二重埋没法｜自然癒着法6往復・症例数5,000件 | yueclinic',
+        description:
+          '2点留めや従来の自然癒着法より固定範囲と力の分散を重視。自然な二重埋没法を院長が一貫して担当します。',
+        url: 'https://yueclinic.com/menus/futae_maibotsu',
+        type: 'article',
+      },
+    };
+  }
   return {
     title: `${itemData.name}`,
-    description: `${itemData.name}の料金はモニター価格${priceText}。市川・鬼越駅前の目元専門美容外科 yueclinic で、院長がカウンセリングから施術、術後フォローまで一貫して担当します。`,
+    description: `${itemData.name}の料金は${priceLabel}${priceText}。市川・鬼越駅前の目元専門美容外科 yueclinic で、院長がカウンセリングから施術、術後フォローまで一貫して担当します。`,
     alternates: {
       canonical: `/menus/${itemData.id}`,
     },
@@ -88,6 +106,7 @@ export default async function MenuDetail({ params }: { params: { id: string } })
     ...defaultDetails,
     ...((menuDetailsData as Record<string, Partial<MenuDetails>>)[itemData.id] || {}),
   };
+  const priceLabel = itemData.id === 'tain_basshi' ? '定価' : 'モニター価格';
 
   const procedureStructuredData = {
     '@context': 'https://schema.org',
@@ -135,7 +154,7 @@ export default async function MenuDetail({ params }: { params: { id: string } })
           {resolvedParams.id === 'mayushita_sekka' && <span style={{fontSize: '1rem', marginLeft: '0.4rem', fontWeight: '500', display: 'inline-block', color: '#555'}}>（眉毛のすぐ下でたるみを切り取る方法）</span>}
         </h1>
         <div style={{ fontSize: '1.4rem', fontWeight: 'bold', color: 'var(--color-text)' }}>
-          ¥{itemData.price.toLocaleString()}<span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'normal', marginLeft: '0.4rem' }}>(モニター価格)</span>
+          ¥{itemData.price.toLocaleString()}{itemData.priceSuffix || ''}<span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'normal', marginLeft: '0.4rem' }}>({priceLabel})</span>
         </div>
       </div>
 
@@ -256,7 +275,7 @@ export default async function MenuDetail({ params }: { params: { id: string } })
         <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ width: '100%', maxWidth: '300px' }}>
           この施術を予約する
         </a>
-        <Link href="/#price" className="btn btn--outline" style={{ width: '100%', maxWidth: '300px' }}>
+        <Link href="/prices" className="btn btn--outline" style={{ width: '100%', maxWidth: '300px' }}>
           料金表へ戻る
         </Link>
       </div>

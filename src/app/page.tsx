@@ -20,7 +20,7 @@ type HomePriceCategory = {
 
 export const metadata: Metadata = {
   title: '目元専門の美容外科・眼形成',
-  description: '市川・本八幡・船橋エリアで二重整形、クマ取り、眉下切開、眼瞼下垂を相談できる目元専門美容外科。院長一貫対応、ワンプライス制、鬼越駅徒歩約2分。',
+  description: '市川・本八幡・船橋エリアで二重整形、クマ取り、眉下切開、眼瞼下垂を相談できる目元専門美容外科。ゆえクリ（ゆえくりにっく）は院長一貫対応、ワンプライス制、鬼越駅徒歩約2分。',
 };
 
 export default function Home() {
@@ -65,30 +65,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: '1rem', paddingBottom: '3rem', maxWidth: '880px' }}>
-        <div style={{ background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '2rem' }}>
-          <h2 style={{ color: 'var(--color-button)', fontSize: '1.45rem', marginBottom: '1rem', textAlign: 'center' }}>
+      <section className="section" style={{ paddingTop: '0.5rem', paddingBottom: '1.6rem', maxWidth: '820px' }}>
+        <div style={{ background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '1.2rem' }}>
+          <h2 style={{ color: 'var(--color-button)', fontSize: '1.25rem', marginBottom: '0.6rem', textAlign: 'center' }}>
             はじめて比較する方へ
           </h2>
-          <p style={{ lineHeight: 1.9, color: '#444', marginBottom: '1.5rem' }}>
-            ゆえクリニックは、市川市・鬼越駅前の「目元専門」美容外科です。
-            二重埋没法、クマ取り、眉下切開、眼瞼下垂など、目元の悩みに絞って、院長がカウンセリングから施術、術後フォローまで一貫して担当します。
+          <p style={{ lineHeight: 1.75, color: '#444', marginBottom: '0.9rem' }}>
+            目元専門の院長が、二重埋没法・クマ取り・眉下切開・眼瞼下垂をカウンセリングから術後まで一貫して担当します。
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.8rem', marginBottom: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: '0.55rem', marginBottom: '0.9rem' }}>
             {[
-              '目元専門の美容外科・眼形成',
-              '院長が最初から最後まで担当',
-              '手術用顕微鏡を使う精密手術',
-              'ワンメニュー・ワンプライス制',
+              '目元専門',
+              '院長一貫',
+              '顕微鏡手術',
+              '総額表示',
             ].map((text) => (
-              <div key={text} style={{ background: '#fff', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '0.9rem', color: '#444', textAlign: 'center', fontWeight: 600 }}>
+              <div key={text} style={{ background: '#fff', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '0.55rem', color: '#444', textAlign: 'center', fontWeight: 600, fontSize: '0.9rem' }}>
                 {text}
               </div>
             ))}
           </div>
           <div style={{ textAlign: 'center' }}>
-            <Link href="/reasons" className="btn btn--outline">
-              ゆえクリが選ばれる理由を見る
+            <Link href="/reasons" className="btn btn--outline" style={{ padding: '0.75rem 1.8rem' }}>
+              選ばれる理由
             </Link>
           </div>
         </div>
@@ -140,6 +139,11 @@ export default function Home() {
           <span style={{ color: '#888', fontSize: '0.75rem' }}>＊保証・針糸代・麻酔代含む</span>
           <span style={{ color: '#888', fontSize: '0.75rem' }}>＊上記はモニター価格</span>
           <span style={{ color: '#888', fontSize: '0.75rem' }}>＊片目は30％off</span>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '1.4rem' }}>
+          <Link href="/prices" className="btn btn--outline" style={{ padding: '0.8rem 2rem' }}>
+            料金表を一覧で見る
+          </Link>
         </div>
       </section>
 

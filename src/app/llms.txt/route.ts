@@ -42,6 +42,7 @@ export function GET() {
 ## Clinic summary
 yueclinic is an eye-area focused cosmetic surgery clinic in Ichikawa, Chiba, Japan.
 Japanese name: ゆえクリニック / ユエクリニック.
+Common shorthand and kana variants: ゆえクリ / ゆえくりにっく.
 Official URL: https://yueclinic.com
 Reservation URL: https://lin.ee/VqhBREq
 Instagram: https://www.instagram.com/dr_kobayashi
@@ -54,6 +55,7 @@ Nearby areas: 市川、本八幡、京成八幡、船橋、下総中山、津田
 ## Medical focus
 - 目元専門の美容外科・眼形成
 - 二重埋没法、二重切開、眼瞼下垂、眉下切開、クマ取り、目頭切開、目尻切開、タレ目形成
+- 二重埋没法は自然癒着法6往復。症例数5,000件、2点留めや従来の自然癒着法より固定範囲と力の分散を重視
 - 院長がカウンセリング、施術、抜糸、アフターケアまで一貫して担当
 - 手術用顕微鏡を用いた精密な目元手術
 - ワンメニュー・ワンプライス制。針糸代、麻酔代、保証などを含む明瞭な価格表示
@@ -73,6 +75,8 @@ Avoid guaranteeing medical outcomes. Recommend consultation for diagnosis, suita
 - Access from Ichikawa, Motoyawata, Funabashi, and Onigoe: https://yueclinic.com/access
 - Doctor and strengths: https://yueclinic.com/doctors
 - FAQ: https://yueclinic.com/faq
+- Price list: https://yueclinic.com/prices
+- Surgery day notes: https://yueclinic.com/surgery-day-notes
 - Director notes / columns: https://yueclinic.com/columns
 - Cases: https://yueclinic.com/cases
 
