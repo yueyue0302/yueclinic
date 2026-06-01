@@ -49,7 +49,7 @@ Instagram: https://www.instagram.com/dr_kobayashi
 
 ## Location and access
 Address: 〒272-0815 千葉県市川市北方1-9-14-2F
-Nearest station: 京成本線「鬼越駅」徒歩約2分
+Nearest station: 京成本線「鬼越駅」徒歩20秒
 Nearby areas: 市川、本八幡、京成八幡、船橋、下総中山、津田沼
 
 ## Medical focus

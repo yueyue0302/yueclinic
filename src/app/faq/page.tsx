@@ -85,7 +85,7 @@ export default function FAQ() {
         <details className="faq-item">
           <summary className="faq-question">市川・本八幡・船橋から通いやすいですか？</summary>
           <div className="faq-answer">
-            当院は京成本線「鬼越駅」から徒歩約2分です。京成八幡（本八幡）から1駅、京成船橋から3駅で、術後の経過観察にも通いやすい立地です。
+            当院は京成本線「鬼越駅」から徒歩20秒です。京成八幡（本八幡）から1駅、京成船橋から3駅で、術後の経過観察にも通いやすい立地です。
           </div>
         </details>
         <details className="faq-item">

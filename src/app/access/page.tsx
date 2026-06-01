@@ -5,15 +5,15 @@ import { clinicGoogleMapsEmbedUrl, clinicGoogleMapsUrl } from '../../lib/clinicM
 const reserveUrl = 'https://lin.ee/VqhBREq';
 
 export const metadata: Metadata = {
-  title: 'アクセス｜鬼越駅徒歩約2分・市川/本八幡/船橋から通いやすい目元専門美容外科',
+  title: 'アクセス｜鬼越駅徒歩20秒・市川/本八幡/船橋から通いやすい目元専門美容外科',
   description:
-    'yueclinic（ゆえクリニック）へのアクセス。京成本線「鬼越駅」徒歩約2分。京成八幡（本八幡）から1駅、京成船橋から3駅。市川・船橋・下総中山・津田沼エリアから通いやすい目元専門美容外科です。',
+    'yueclinic（ゆえクリニック）へのアクセス。京成本線「鬼越駅」徒歩20秒。京成八幡（本八幡）から1駅、京成船橋から3駅。市川・船橋・下総中山・津田沼エリアから通いやすい目元専門美容外科です。',
   alternates: {
     canonical: '/access',
   },
   openGraph: {
     title: 'アクセス｜yueclinic（ゆえクリニック）',
-    description: '鬼越駅徒歩約2分。市川・本八幡・船橋から通いやすい目元専門美容外科です。',
+    description: '鬼越駅徒歩20秒。市川・本八幡・船橋から通いやすい目元専門美容外科です。',
     url: 'https://yueclinic.com/access',
     type: 'article',
   },
@@ -62,7 +62,7 @@ export default function AccessPage() {
           アクセス
         </h1>
         <p style={{ lineHeight: 1.9, color: '#444', maxWidth: '720px', margin: '0 auto' }}>
-          yueclinic（ゆえクリニック）は、京成本線「鬼越駅」から徒歩約2分の場所にあります。
+          yueclinic（ゆえクリニック）は、京成本線「鬼越駅」から徒歩20秒の場所にあります。
           本八幡・船橋・市川・下総中山エリアからも通いやすく、術後の経過観察にも来院しやすい立地です。
         </p>
       </header>

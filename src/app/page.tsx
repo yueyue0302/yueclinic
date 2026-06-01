@@ -20,7 +20,7 @@ type HomePriceCategory = {
 
 export const metadata: Metadata = {
   title: '目元専門の美容外科・眼形成',
-  description: '市川・本八幡・船橋エリアで二重整形、クマ取り、眉下切開、眼瞼下垂を相談できる目元専門美容外科。ゆえクリ（ゆえくりにっく）は院長一貫対応、ワンプライス制、鬼越駅徒歩約2分。',
+  description: '市川・本八幡・船橋エリアで二重整形、クマ取り、眉下切開、眼瞼下垂を相談できる目元専門美容外科。ゆえクリ（ゆえくりにっく）は院長一貫対応、ワンプライス制、鬼越駅徒歩20秒。',
 };
 
 export default function Home() {
@@ -153,7 +153,7 @@ export default function Home() {
         <h2 className="section__title" style={{ marginBottom: '1.5rem' }}>アクセス</h2>
         <div className="access-info fade-in" style={{ marginBottom: '1rem' }}>
           <p>
-            京成線「鬼越駅」から20秒<br/>
+            京成線「鬼越駅」から徒歩20秒<br/>
             <span style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.3rem', display: 'inline-block' }}>少しローカル駅ですが、駅まで来たらすぐそこなので意外と近いです</span>
           </p>
         </div>
