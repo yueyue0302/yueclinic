@@ -64,6 +64,23 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       },
     };
   }
+  if (itemData.id === 'mayushita_sekka') {
+    return {
+      title: '眉下切開｜症例数500件・まぶたのたるみ取り',
+      description:
+        '市川・本八幡・船橋エリアで眉下切開を相談するならyueclinic。症例数500件、顕微鏡下縫合、ROOF・眼窩脂肪・眼輪筋処理込み。元の二重ラインを大きく変えず、まぶたのかぶさりを自然に軽くします。',
+      alternates: {
+        canonical: '/menus/mayushita_sekka',
+      },
+      openGraph: {
+        title: '眉下切開｜症例数500件・まぶたのたるみ取り | yueclinic',
+        description:
+          '眉毛下のラインに沿って余分な皮膚を切除し、元の二重ラインを大きく変えずにまぶたのたるみを改善します。',
+        url: 'https://yueclinic.com/menus/mayushita_sekka',
+        type: 'article',
+      },
+    };
+  }
   return {
     title: `${itemData.name}`,
     description: `${itemData.name}の料金は${priceLabel}${priceText}。市川・鬼越駅前の目元専門美容外科 yueclinic で、院長がカウンセリングから施術、術後フォローまで一貫して担当します。`,
