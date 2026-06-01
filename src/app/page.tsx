@@ -96,6 +96,17 @@ export default function Home() {
       {/* Price Section */}
       <section id="price" className="section bg-light" style={{ paddingTop: '0.4rem', paddingBottom: '2.5rem' }}>
         <h2 className="section__title" style={{ marginBottom: '1rem' }}>メニュー・料金</h2>
+        <div style={{ maxWidth: '720px', margin: '0 auto 1.35rem', border: '1px solid var(--color-accent-light)', borderRadius: '8px', background: '#fff', padding: '0.95rem 1rem', textAlign: 'center', color: '#4a433b' }}>
+          <div style={{ fontSize: '0.82rem', color: 'var(--color-button)', fontWeight: 700, letterSpacing: '0.04em', marginBottom: '0.25rem' }}>
+            キャンペーン中｜モニター価格でご案内中
+          </div>
+          <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
+            二重埋没法 ¥68,000 ／ 眉下切開 ¥120,000
+          </div>
+          <div style={{ fontSize: '0.78rem', color: '#777', marginTop: '0.25rem', lineHeight: 1.6 }}>
+            症例写真にご協力いただける方が対象です。適応や条件はカウンセリングで確認します。
+          </div>
+        </div>
         <div className="price-list fade-in">
           {(pricesData.categories as HomePriceCategory[]).map((category) => (
             <div key={category.id} className="price-category">

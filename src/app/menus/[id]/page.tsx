@@ -51,14 +51,14 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     return {
       title: '二重埋没法｜自然癒着法6往復・症例数5,000件',
       description:
-        '市川・本八幡・船橋エリアで二重埋没法を相談するならyueclinic。2点留めや従来の自然癒着法より固定範囲と力の分散を重視した自然癒着法6往復。症例数5,000件、モニター価格¥68,000。',
+        '市川・本八幡・船橋エリアで二重埋没法を相談するならyueclinic。2点留めや従来の自然癒着法より固定範囲と力の分散を重視した自然癒着法6往復。必要に応じて顕微鏡で確認し、症例数5,000件、モニター価格¥68,000。',
       alternates: {
         canonical: '/menus/futae_maibotsu',
       },
       openGraph: {
         title: '二重埋没法｜自然癒着法6往復・症例数5,000件 | yueclinic',
         description:
-          '2点留めや従来の自然癒着法より固定範囲と力の分散を重視。自然な二重埋没法を院長が一貫して担当します。',
+          '2点留めや従来の自然癒着法より固定範囲と力の分散を重視。必要に応じて顕微鏡で確認し、自然な二重埋没法を院長が一貫して担当します。',
         url: 'https://yueclinic.com/menus/futae_maibotsu',
         type: 'article',
       },
@@ -124,6 +124,15 @@ export default async function MenuDetail({ params }: { params: { id: string } })
     ...((menuDetailsData as Record<string, Partial<MenuDetails>>)[itemData.id] || {}),
   };
   const priceLabel = itemData.id === 'tain_basshi' ? '定価' : 'モニター価格';
+  const isPriorityMenu = itemData.id === 'futae_maibotsu' || itemData.id === 'mayushita_sekka';
+  const priorityCampaignText = itemData.id === 'futae_maibotsu'
+    ? '二重埋没法 ¥68,000'
+    : itemData.id === 'mayushita_sekka'
+      ? '眉下切開 ¥120,000'
+      : '';
+  const microscopeColumnLead = itemData.id === 'futae_maibotsu'
+    ? '埋没法でも、糸の通し方・結び目・ループ位置を丁寧に確認することが自然さと持続性につながります。'
+    : '眉下切開では、皮膚の層・創縁・糸の張力を細かくそろえることが、傷跡の目立ちにくさにつながります。';
 
   const procedureStructuredData = {
     '@context': 'https://schema.org',
@@ -173,6 +182,19 @@ export default async function MenuDetail({ params }: { params: { id: string } })
         <div style={{ fontSize: '1.4rem', fontWeight: 'bold', color: 'var(--color-text)' }}>
           ¥{itemData.price.toLocaleString()}{itemData.priceSuffix || ''}<span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'normal', marginLeft: '0.4rem' }}>({priceLabel})</span>
         </div>
+        {isPriorityMenu && (
+          <div style={{ marginTop: '1rem', border: '1px solid var(--color-accent-light)', borderRadius: '8px', background: '#fdfdf9', padding: '0.95rem 1rem', color: '#4a433b' }}>
+            <div style={{ fontSize: '0.82rem', color: 'var(--color-button)', fontWeight: 700, letterSpacing: '0.04em', marginBottom: '0.25rem' }}>
+              キャンペーン中｜モニター価格でご案内中
+            </div>
+            <div style={{ fontSize: '1.05rem', fontWeight: 700 }}>
+              {priorityCampaignText}
+            </div>
+            <div style={{ fontSize: '0.82rem', color: '#777', marginTop: '0.25rem', lineHeight: 1.6 }}>
+              症例写真にご協力いただける方が対象です。適応や条件はカウンセリングで確認します。
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Hero Illustration - temporarily hidden
@@ -230,6 +252,23 @@ export default async function MenuDetail({ params }: { params: { id: string } })
             <div style={{ lineHeight: '1.8', color: '#333', whiteSpace: 'pre-wrap' }}>
               {details.details}
             </div>
+          </div>
+        )}
+
+        {isPriorityMenu && (
+          <div style={{ marginBottom: '3rem', background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '1.35rem' }}>
+            <div style={{ fontSize: '0.82rem', color: 'var(--color-button)', fontWeight: 700, marginBottom: '0.35rem' }}>
+              院長コラム
+            </div>
+            <h2 style={{ fontSize: '1.25rem', borderBottom: 'none', borderLeft: 'none', paddingLeft: 0, marginTop: 0, marginBottom: '0.8rem', color: 'var(--color-text)' }}>
+              顕微鏡を使うと何が変わる？
+            </h2>
+            <p style={{ marginBottom: '1rem', lineHeight: 1.8, color: '#444' }}>
+              {microscopeColumnLead}
+            </p>
+            <Link href="/columns/microscope-brow-suture" className="btn btn--outline" style={{ padding: '0.75rem 1.4rem', fontSize: '0.92rem' }}>
+              顕微鏡下縫合の考え方を読む
+            </Link>
           </div>
         )}
 

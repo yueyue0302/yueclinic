@@ -83,6 +83,18 @@ export default function PricesPage() {
         </p>
       </header>
 
+      <div style={{ maxWidth: '760px', margin: '0 auto 2.4rem', border: '1px solid var(--color-accent-light)', borderRadius: '8px', background: '#fdfdf9', padding: '1rem', textAlign: 'center', color: '#4a433b' }}>
+        <div style={{ fontSize: '0.82rem', color: 'var(--color-button)', fontWeight: 700, letterSpacing: '0.04em', marginBottom: '0.25rem' }}>
+          キャンペーン中｜モニター価格でご案内中
+        </div>
+        <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
+          二重埋没法 ¥68,000 ／ 眉下切開 ¥120,000
+        </div>
+        <div style={{ fontSize: '0.78rem', color: '#777', marginTop: '0.25rem', lineHeight: 1.6 }}>
+          症例写真にご協力いただける方が対象です。適応や条件はカウンセリングで確認します。
+        </div>
+      </div>
+
       {categories.map((category) => (
         <section key={category.id} style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1.2rem' }}>
