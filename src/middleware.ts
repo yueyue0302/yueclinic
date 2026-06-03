@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 const WWW_HOST = 'www.yueclinic.com';
 const APEX_ORIGIN = 'https://yueclinic.com';
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const host = request.headers.get('host')?.split(':')[0].toLowerCase();
 
   if (host !== WWW_HOST) {
