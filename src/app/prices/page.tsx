@@ -299,16 +299,11 @@ export default function PricesPage() {
         <h1 className="section__title" style={{ marginBottom: '1.2rem' }}>
           メニュー・料金表
         </h1>
-        <p style={{ lineHeight: 1.9, color: '#444', maxWidth: '720px', margin: '0 auto' }}>
-          二重埋没法、クマ取り、眉下切開、眼瞼下垂などの料金を一覧で確認できます。
-          切らない眼瞼下垂、上まぶた脂肪とり、裏ハムラ法・表ハムラ法などの細かいメニューも並べています。
-          各施術名を押すと、詳しい適応・ダウンタイム・リスクのページへ移動します。
-        </p>
       </header>
 
       <div style={{ maxWidth: '760px', margin: '0 auto 2.4rem', border: '1px solid var(--color-accent-light)', borderRadius: '8px', background: '#fdfdf9', padding: '1rem', textAlign: 'center', color: '#4a433b' }}>
         <div style={{ fontSize: '0.82rem', color: 'var(--color-button)', fontWeight: 700, letterSpacing: '0.04em', marginBottom: '0.25rem' }}>
-          キャンペーン中｜モニター価格でご案内中
+          キャンペーン中｜特別割引額でご案内中
         </div>
         <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
           二重埋没法 ¥68,000 ／ 眉下切開 ¥120,000
