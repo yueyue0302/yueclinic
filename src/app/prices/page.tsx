@@ -328,9 +328,9 @@ export default function PricesPage() {
               <thead>
                 <tr>
                   <th>施術</th>
-                  <th>内容</th>
                   <th>モニター価格</th>
-                  <th>通常価格</th>
+                  <th>通常料金</th>
+                  <th>内容</th>
                   <th>詳細</th>
                 </tr>
               </thead>
@@ -348,15 +348,15 @@ export default function PricesPage() {
                           <span className="prices-table__subdescription">{row.description}</span>
                         )}
                       </td>
-                      <td className="prices-table__summary">
-                        {row.summary}
-                      </td>
                       <td className="prices-table__price">
                         <span>{row.price || '—'}</span>
                         {row.priceLabel && <small>{row.priceLabel}</small>}
                       </td>
                       <td className="prices-table__usual">
                         {row.usualPrice || '—'}
+                      </td>
+                      <td className="prices-table__summary">
+                        {row.summary}
                       </td>
                       <td className="prices-table__detail">
                         <Link href={row.href} className="prices-table__detail-link">
