@@ -33,6 +33,11 @@ function priceLabel(item: PriceItem) {
   return item.id === 'tain_basshi' ? '定価' : 'モニター価格';
 }
 
+function normalPrice(details?: MenuDetails) {
+  const match = details?.priceSimulation?.match(/通常\s*¥[\d,]+/);
+  return match ? match[0].replace(/^通常\s*/, '') : '';
+}
+
 export const metadata: Metadata = {
   title: '料金表｜二重埋没法・クマ取り・眉下切開・目元整形',
   description:
@@ -100,59 +105,52 @@ export default function PricesPage() {
           <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1.2rem' }}>
             {category.name}
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
-            {category.items.map((item) => {
-              const details = menuDetails[item.id] || {};
+          <div className="prices-table-wrap">
+            <table className="prices-table">
+              <thead>
+                <tr>
+                  <th>施術</th>
+                  <th>内容</th>
+                  <th>モニター価格</th>
+                  <th>通常価格</th>
+                  <th>詳細</th>
+                </tr>
+              </thead>
+              <tbody>
+                {category.items.map((item) => {
+                  const details = menuDetails[item.id] || {};
+                  const usualPrice = normalPrice(details);
 
-              return (
-                <section
-                  key={item.id}
-                  className="column-card"
-                  style={{ padding: '1.2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}
-                >
-                  <Link href={`/menus/${item.id}`} style={{ display: 'block' }}>
-                    <h3 style={{ color: 'var(--color-button)', fontSize: '1.15rem', marginBottom: '0.4rem' }}>
-                      {item.name}
-                    </h3>
-                    {item.description && (
-                      <p style={{ color: '#666', fontSize: '0.9rem', margin: 0 }}>{item.description}</p>
-                    )}
-                  </Link>
-
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--color-text)' }}>
-                      {yen(item.price, item.priceSuffix)}
-                    </span>
-                    <span style={{ fontSize: '0.85rem', color: '#888' }}>{priceLabel(item)}</span>
-                  </div>
-
-                  {details.catchphrase && (
-                    <p style={{ color: '#555', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>
-                      {details.catchphrase}
-                    </p>
-                  )}
-
-                  {details.priceSimulation && (
-                    <div
-                      style={{
-                        lineHeight: 1.75,
-                        color: '#444',
-                        background: '#fcfaf6',
-                        border: '1px solid var(--color-accent-light)',
-                        padding: '1rem',
-                        borderRadius: '8px',
-                        fontSize: '0.92rem',
-                      }}
-                      dangerouslySetInnerHTML={{ __html: details.priceSimulation }}
-                    />
-                  )}
-
-                  <Link href={`/menus/${item.id}`} className="btn btn--outline" style={{ width: '100%', marginTop: 'auto' }}>
-                    この施術を詳しく見る
-                  </Link>
-                </section>
-              );
-            })}
+                  return (
+                    <tr key={item.id}>
+                      <td className="prices-table__menu">
+                        <Link href={`/menus/${item.id}`} className="prices-table__menu-link">
+                          {item.name}
+                        </Link>
+                        {item.description && (
+                          <span className="prices-table__description">{item.description}</span>
+                        )}
+                      </td>
+                      <td className="prices-table__summary">
+                        {details.catchphrase || item.description || '詳しい適応はカウンセリングで確認します。'}
+                      </td>
+                      <td className="prices-table__price">
+                        <span>{yen(item.price, item.priceSuffix)}</span>
+                        <small>{priceLabel(item)}</small>
+                      </td>
+                      <td className="prices-table__usual">
+                        {usualPrice || '—'}
+                      </td>
+                      <td className="prices-table__detail">
+                        <Link href={`/menus/${item.id}`} className="prices-table__detail-link">
+                          詳細
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </section>
       ))}
