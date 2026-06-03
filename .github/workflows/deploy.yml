@@ -22,7 +22,9 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
-      - run: node scripts/ensure-www-redirect.mjs
+      - name: Ensure www redirect in Cloudflare
+        continue-on-error: true
+        run: node scripts/ensure-www-redirect.mjs
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ZONE_NAME: yueclinic.com
