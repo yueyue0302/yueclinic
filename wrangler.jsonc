@@ -3,6 +3,16 @@
   "main": ".open-next/worker.js",
   "name": "yueclinic",
   "compatibility_date": "2026-04-28",
+  "routes": [
+    {
+      "pattern": "yueclinic.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.yueclinic.com",
+      "custom_domain": true
+    }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ],
