@@ -7,10 +7,6 @@
     {
       "pattern": "yueclinic.com",
       "custom_domain": true
-    },
-    {
-      "pattern": "www.yueclinic.com",
-      "custom_domain": true
     }
   ],
   "compatibility_flags": [
