@@ -29,7 +29,7 @@ type PriceTableRow = {
   description?: string;
   summary: string;
   price: string;
-  priceLabel: string;
+  priceLabel?: string;
   usualPrice?: string;
   href: string;
 };
@@ -196,8 +196,8 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
       parentName: '他院施術の抜糸',
       description: '目元・前額リフトの抜糸',
       summary: '他院で受けた切開法や前額リフトの糸を、医師が丁寧に抜糸します。',
-      price: '¥20,000',
-      priceLabel: '料金',
+      price: '',
+      usualPrice: '¥20,000',
       href: '/menus/tain_basshi',
     },
     {
@@ -206,8 +206,8 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
       parentName: '他院施術の抜糸',
       description: '埋没法と同時施術 / 抜糸のみ',
       summary: '埋没法と同時施術は1本¥3,000、抜糸のみは1本¥10,000です。',
-      price: '1本 ¥3,000〜',
-      priceLabel: '料金',
+      price: '',
+      usualPrice: '1本 ¥3,000〜',
       href: '/menus/tain_basshi',
     },
     {
@@ -216,8 +216,8 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
       parentName: '他院施術の抜糸',
       description: '外側に残る糸の抜糸',
       summary: '外側に残る糸が気になる場合の抜糸にも対応します。',
-      price: '¥10,000',
-      priceLabel: '料金',
+      price: '',
+      usualPrice: '¥10,000',
       href: '/menus/tain_basshi',
     },
   ],
@@ -329,7 +329,7 @@ export default function PricesPage() {
                 <tr>
                   <th>施術</th>
                   <th>内容</th>
-                  <th>料金</th>
+                  <th>モニター価格</th>
                   <th>通常価格</th>
                   <th>詳細</th>
                 </tr>
@@ -352,8 +352,8 @@ export default function PricesPage() {
                         {row.summary}
                       </td>
                       <td className="prices-table__price">
-                        <span>{row.price}</span>
-                        <small>{row.priceLabel}</small>
+                        <span>{row.price || '—'}</span>
+                        {row.priceLabel && <small>{row.priceLabel}</small>}
                       </td>
                       <td className="prices-table__usual">
                         {row.usualPrice || '—'}
