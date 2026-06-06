@@ -68,6 +68,17 @@ body:has(.estimate-page) .floating-reservation {
   color: #fff;
 }
 
+.estimate-button--save {
+  border-color: #3b6b54;
+  background: #3b6b54;
+  color: #fff;
+}
+
+.estimate-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 .estimate-sheet {
   width: min(100%, 980px);
   min-height: 1120px;
@@ -356,6 +367,31 @@ body:has(.estimate-page) .floating-reservation {
   display: none;
 }
 
+.estimate-sheet--saving {
+  width: 980px;
+  min-height: 1120px;
+  padding: 54px 60px 46px;
+  box-shadow: none;
+}
+
+.estimate-sheet--saving .estimate-add-row,
+.estimate-sheet--saving .estimate-table__remove {
+  display: none;
+}
+
+.estimate-sheet--saving .estimate-table-wrap {
+  overflow: visible;
+}
+
+.estimate-sheet--saving .estimate-table {
+  min-width: 0;
+}
+
+.estimate-sheet--saving input::placeholder,
+.estimate-sheet--saving textarea::placeholder {
+  color: transparent;
+}
+
 @media (max-width: 760px) {
   .estimate-page {
     padding: 0.75rem 0.5rem 3rem;
@@ -368,7 +404,18 @@ body:has(.estimate-page) .floating-reservation {
 
   .estimate-toolbar__actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .estimate-toolbar__actions .estimate-button {
+    min-width: 0;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+  }
+
+  .estimate-toolbar__actions .estimate-button--save {
+    grid-column: 1 / -1;
+    grid-row: 1;
   }
 
   .estimate-sheet {
@@ -384,6 +431,21 @@ body:has(.estimate-page) .floating-reservation {
   .estimate-meta {
     width: 100%;
   }
+}
+
+.estimate-sheet.estimate-sheet--saving {
+  width: 980px;
+  min-height: 1120px;
+  padding: 54px 60px 46px;
+}
+
+.estimate-sheet--saving .estimate-header {
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.estimate-sheet--saving .estimate-meta {
+  width: 300px;
 }
 
 @media print {

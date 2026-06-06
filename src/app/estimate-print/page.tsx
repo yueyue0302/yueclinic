@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import './estimate-print.css';
 
 type EstimateItem = {
@@ -33,7 +33,11 @@ const formatDate = (value: string) => {
 
 const formatYen = (value: number) => `¥${Math.max(0, value).toLocaleString('ja-JP')}`;
 
+const sanitizeFileName = (value: string) =>
+  value.trim().replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, '_');
+
 export default function EstimatePrintPage() {
+  const sheetRef = useRef<HTMLElement>(null);
   const [estimateNumber, setEstimateNumber] = useState('');
   const [issueDate, setIssueDate] = useState(today);
   const [validUntil, setValidUntil] = useState('');
@@ -47,6 +51,7 @@ export default function EstimatePrintPage() {
     '上記金額には消費税が含まれています。\n施術内容は診察結果により変更となる場合があります。',
   );
   const [nextId, setNextId] = useState(4);
+  const [isSavingPdf, setIsSavingPdf] = useState(false);
 
   const subtotal = useMemo(
     () => items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0),
@@ -93,16 +98,113 @@ export default function EstimatePrintPage() {
     setNextId(4);
   };
 
+  const savePdf = async () => {
+    const sheet = sheetRef.current;
+    if (!sheet || isSavingPdf) return;
+
+    setIsSavingPdf(true);
+    sheet.classList.add('estimate-sheet--saving');
+
+    try {
+      await document.fonts.ready;
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import('html2canvas'),
+        import('jspdf'),
+      ]);
+      const canvas = await html2canvas(sheet, {
+        backgroundColor: '#ffffff',
+        logging: false,
+        scale: 2,
+        useCORS: true,
+        windowHeight: sheet.scrollHeight,
+        windowWidth: sheet.scrollWidth,
+      });
+
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+        compress: true,
+      });
+      const margin = 10;
+      const pageWidth = 210 - margin * 2;
+      const pageHeight = 297 - margin * 2;
+      const pixelsPerPage = Math.floor((canvas.width * pageHeight) / pageWidth);
+      let sourceY = 0;
+      let pageIndex = 0;
+
+      while (sourceY < canvas.height) {
+        const sliceHeight = Math.min(pixelsPerPage, canvas.height - sourceY);
+        const pageCanvas = document.createElement('canvas');
+        pageCanvas.width = canvas.width;
+        pageCanvas.height = sliceHeight;
+
+        const context = pageCanvas.getContext('2d');
+        if (!context) throw new Error('PDF画像を生成できませんでした。');
+
+        context.fillStyle = '#ffffff';
+        context.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+        context.drawImage(
+          canvas,
+          0,
+          sourceY,
+          canvas.width,
+          sliceHeight,
+          0,
+          0,
+          canvas.width,
+          sliceHeight,
+        );
+
+        if (pageIndex > 0) pdf.addPage();
+        const renderedHeight = (sliceHeight * pageWidth) / canvas.width;
+        pdf.addImage(
+          pageCanvas.toDataURL('image/jpeg', 0.95),
+          'JPEG',
+          margin,
+          margin,
+          pageWidth,
+          renderedHeight,
+          undefined,
+          'FAST',
+        );
+
+        sourceY += sliceHeight;
+        pageIndex += 1;
+      }
+
+      const patientPart = sanitizeFileName(patientName) || '患者様';
+      const datePart = issueDate || today();
+      pdf.save(`見積書_${patientPart}_${datePart}.pdf`);
+    } catch (error) {
+      console.error(error);
+      window.alert('PDFの保存に失敗しました。印刷ボタンから「PDFに保存」をお試しください。');
+    } finally {
+      sheet.classList.remove('estimate-sheet--saving');
+      setIsSavingPdf(false);
+    }
+  };
+
   return (
     <div className="estimate-page">
       <div className="estimate-toolbar" aria-label="見積書操作">
         <div>
           <strong>見積書作成</strong>
-          <span>入力内容はこの端末内だけで扱われ、送信・保存されません。</span>
+          <span>入力内容は送信されません。完成後はPDF保存または印刷できます。</span>
         </div>
         <div className="estimate-toolbar__actions">
           <button type="button" className="estimate-button estimate-button--subtle" onClick={clearEstimate}>
             入力を消去
+          </button>
+          <button
+            type="button"
+            className="estimate-button estimate-button--save"
+            onClick={savePdf}
+            disabled={isSavingPdf}
+          >
+            {isSavingPdf ? '保存中…' : 'PDF保存'}
           </button>
           <button type="button" className="estimate-button estimate-button--primary" onClick={() => window.print()}>
             印刷
@@ -110,7 +212,7 @@ export default function EstimatePrintPage() {
         </div>
       </div>
 
-      <article className="estimate-sheet">
+      <article ref={sheetRef} className="estimate-sheet">
         <header className="estimate-header">
           <div>
             <p className="estimate-brand">yueclinic</p>
