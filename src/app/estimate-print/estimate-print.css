@@ -1,0 +1,451 @@
+.estimate-page {
+  min-height: 100vh;
+  padding: 2rem 1rem 5rem;
+  background: #eef1f4;
+  color: #20252b;
+}
+
+body:has(.estimate-page) .header,
+body:has(.estimate-page) .floating-reserve,
+body:has(.estimate-page) .floating-reservation {
+  display: none;
+}
+
+.estimate-toolbar {
+  width: min(100%, 980px);
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #d9dee3;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(27, 36, 45, 0.08);
+}
+
+.estimate-toolbar strong,
+.estimate-toolbar span {
+  display: block;
+}
+
+.estimate-toolbar strong {
+  font-size: 1rem;
+}
+
+.estimate-toolbar span {
+  margin-top: 0.1rem;
+  color: #68727d;
+  font-size: 0.75rem;
+}
+
+.estimate-toolbar__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.estimate-button,
+.estimate-add-row {
+  border: 1px solid #9da6af;
+  border-radius: 6px;
+  background: #fff;
+  color: #303841;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.estimate-button {
+  padding: 0.55rem 0.9rem;
+}
+
+.estimate-button--primary {
+  border-color: #25384a;
+  background: #25384a;
+  color: #fff;
+}
+
+.estimate-sheet {
+  width: min(100%, 980px);
+  min-height: 1120px;
+  margin: 0 auto;
+  padding: 54px 60px 46px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(27, 36, 45, 0.12);
+  font-family: var(--font-noto-sans-jp), "Yu Gothic", sans-serif;
+}
+
+.estimate-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #25384a;
+}
+
+.estimate-brand {
+  color: #687786;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.estimate-header h1 {
+  margin-top: 0.3rem;
+  color: #1f2d3a;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+}
+
+.estimate-meta {
+  width: 300px;
+  font-size: 0.78rem;
+}
+
+.estimate-meta > div {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  min-height: 32px;
+  border-bottom: 1px solid #cbd1d7;
+}
+
+.estimate-meta dt,
+.estimate-meta dd {
+  display: flex;
+  align-items: center;
+}
+
+.estimate-meta dt {
+  padding: 0 0.45rem;
+  background: #f1f3f5;
+  font-weight: 700;
+}
+
+.estimate-meta dd {
+  padding-left: 0.45rem;
+}
+
+.estimate-meta input {
+  width: 100%;
+}
+
+.estimate-recipient {
+  margin-top: 2rem;
+}
+
+.estimate-recipient label {
+  width: min(100%, 480px);
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  border-bottom: 1px solid #25384a;
+}
+
+.estimate-recipient input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.estimate-recipient label span {
+  padding-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.estimate-recipient p {
+  margin-top: 0.7rem;
+  color: #59636d;
+  font-size: 0.8rem;
+}
+
+.estimate-total {
+  margin: 2rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  border: 2px solid #25384a;
+  background: #f7f8f9;
+}
+
+.estimate-total span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.estimate-total strong {
+  font-size: 1.55rem;
+  letter-spacing: 0;
+}
+
+.estimate-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.estimate-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.8rem;
+}
+
+.estimate-table th,
+.estimate-table td {
+  border: 1px solid #aeb7c0;
+}
+
+.estimate-table th {
+  padding: 0.55rem 0.35rem;
+  background: #25384a;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.estimate-table th:nth-child(2) {
+  width: 58px;
+}
+
+.estimate-table th:nth-child(3),
+.estimate-table th:nth-child(4),
+.estimate-table th:nth-child(5) {
+  width: 128px;
+}
+
+.estimate-table__remove {
+  width: 34px;
+}
+
+.estimate-table input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.45rem;
+}
+
+.estimate-table input[type="number"] {
+  text-align: right;
+}
+
+.estimate-table__amount {
+  padding: 0.45rem;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.estimate-table__remove button {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: #8b3c3c;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.estimate-add-row {
+  margin-top: 0.55rem;
+  padding: 0.45rem 0.75rem;
+}
+
+.estimate-summary {
+  width: min(100%, 380px);
+  margin: 1.25rem 0 1.5rem auto;
+}
+
+.estimate-summary dl > div {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  border-bottom: 1px solid #cbd1d7;
+}
+
+.estimate-summary dt,
+.estimate-summary dd {
+  padding: 0.55rem 0.7rem;
+}
+
+.estimate-summary dt {
+  background: #f1f3f5;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.estimate-summary dd {
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.estimate-summary .estimate-summary__total {
+  border: 2px solid #25384a;
+  border-top: 0;
+}
+
+.estimate-summary__total dt,
+.estimate-summary__total dd {
+  font-size: 1rem;
+}
+
+.estimate-notes {
+  margin-top: 1.8rem;
+}
+
+.estimate-notes h2 {
+  margin-bottom: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.estimate-notes textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.7rem;
+  border: 1px solid #aeb7c0;
+  resize: vertical;
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.estimate-clinic {
+  margin-top: 2rem;
+  margin-left: auto;
+  width: min(100%, 360px);
+  padding-top: 0.8rem;
+  border-top: 1px solid #25384a;
+  color: #3d4852;
+  font-size: 0.74rem;
+}
+
+.estimate-clinic strong,
+.estimate-clinic span {
+  display: block;
+}
+
+.estimate-clinic strong {
+  margin-bottom: 0.2rem;
+  color: #25384a;
+  font-size: 0.9rem;
+}
+
+.estimate-sheet input,
+.estimate-sheet textarea {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: #20252b;
+  font-family: inherit;
+}
+
+.estimate-sheet input:focus,
+.estimate-sheet textarea:focus {
+  background: #eef6ff;
+  box-shadow: inset 0 0 0 2px #6e9bc3;
+}
+
+.estimate-print-value {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .estimate-page {
+    padding: 0.75rem 0.5rem 3rem;
+  }
+
+  .estimate-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .estimate-toolbar__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .estimate-sheet {
+    min-height: 0;
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .estimate-header {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .estimate-meta {
+    width: 100%;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body:has(.estimate-page) .header,
+  body:has(.estimate-page) .floating-reserve,
+  body:has(.estimate-page) .floating-reservation,
+  .estimate-toolbar,
+  .estimate-add-row,
+  .estimate-table__remove {
+    display: none !important;
+  }
+
+  body:has(.estimate-page),
+  .estimate-page {
+    background: #fff;
+  }
+
+  .estimate-page {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .estimate-sheet {
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .estimate-table-wrap {
+    overflow: visible;
+  }
+
+  .estimate-table {
+    min-width: 0;
+  }
+
+  .estimate-table input {
+    min-height: 30px;
+  }
+
+  .estimate-sheet input::placeholder,
+  .estimate-sheet textarea::placeholder {
+    color: transparent;
+  }
+
+  .estimate-meta input[type="date"] {
+    display: none;
+  }
+
+  .estimate-print-value {
+    display: inline;
+  }
+
+  .estimate-notes textarea {
+    min-height: 75px;
+    border-color: #aeb7c0;
+    resize: none;
+  }
+}
