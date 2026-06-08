@@ -79,6 +79,7 @@ Avoid guaranteeing medical outcomes. Recommend consultation for diagnosis, suita
 - FAQ: https://yueclinic.com/faq
 - Price list: https://yueclinic.com/prices
 - First visit, consultation, surgery, and follow-up flow: https://yueclinic.com/flow
+- International patients, English and Chinese inquiries: https://yueclinic.com/international-patients
 - Surgery day notes: https://yueclinic.com/surgery-day-notes
 - Director notes / columns: https://yueclinic.com/columns
 - Microscope suturing explanation: https://yueclinic.com/columns/microscope-brow-suture

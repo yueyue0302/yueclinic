@@ -93,6 +93,11 @@ export default function Home() {
               診療の流れ
             </Link>
           </div>
+          <div style={{ textAlign: 'center', marginTop: '0.85rem' }}>
+            <Link href="/international-patients" style={{ color: 'var(--color-button)', fontSize: '0.82rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+              English / 中文での事前相談について
+            </Link>
+          </div>
         </div>
       </section>
 
