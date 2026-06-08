@@ -93,11 +93,6 @@ export default function Home() {
               診療の流れ
             </Link>
           </div>
-          <div style={{ textAlign: 'center', marginTop: '0.85rem' }}>
-            <Link href="/international-patients" style={{ color: 'var(--color-button)', fontSize: '0.82rem', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
-              English / 中文での事前相談について
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -209,6 +204,11 @@ export default function Home() {
           <div style={{ fontSize: '0.8rem', color: '#999', marginBottom: '0.8rem', lineHeight: '1.6' }}>
             ※サイト・SNS上のテキスト・イラスト・画像の無断複写・転載等を固く禁じます。<br/>
             <span style={{ fontSize: '0.75rem', color: '#aaa' }}>悪質な権利侵害や業務妨害行為（誹謗中傷等を含む）に対しては、発信者情報開示請求等の法的措置を厳正に講じます。</span>
+          </div>
+          <div style={{ marginBottom: '0.8rem' }}>
+            <Link href="/international-patients" style={{ color: '#999', fontSize: '0.76rem', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+              English / 中文 inquiries
+            </Link>
           </div>
           <p className="footer__copyright">&copy; {new Date().getFullYear()} yueclinic. All rights reserved.</p>
         </div>

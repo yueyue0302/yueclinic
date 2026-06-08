@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const lineUrl = 'https://lin.ee/VqhBREq';
+const instagramUrl = 'https://www.instagram.com/dr_kobayashi';
 
 const faqs = [
   {
     question: 'Can I contact yueclinic in English or Chinese?',
     answer:
-      'Yes. Short inquiries in English or Chinese are welcome through the official LINE. For medical safety, important explanations, consent, and final treatment decisions are confirmed during the in-person consultation.',
+      'Yes. Short inquiries in English or Chinese are welcome through Instagram DM. For medical safety, important explanations, consent, and final treatment decisions are confirmed during the in-person consultation.',
   },
   {
     question: 'Do I need to speak Japanese?',
@@ -31,14 +31,14 @@ const procedures = [
 export const metadata: Metadata = {
   title: 'For International Patients｜English・Chinese inquiries welcome',
   description:
-    'yueclinic welcomes international patients seeking eye-area cosmetic surgery in Ichikawa, Chiba, near Tokyo. English and Chinese inquiries are welcome via LINE. Double eyelid surgery, brow lift, under-eye treatment, and ptosis consultation.',
+    'yueclinic welcomes international patients seeking eye-area cosmetic surgery in Ichikawa, Chiba, near Tokyo. English and Chinese inquiries are welcome via Instagram DM. Double eyelid surgery, brow lift, under-eye treatment, and ptosis consultation.',
   alternates: {
     canonical: '/international-patients',
   },
   openGraph: {
     title: 'For International Patients｜yueclinic',
     description:
-      'English and Chinese-speaking patients are welcome to contact yueclinic via LINE for eye-area cosmetic surgery consultation near Tokyo and Chiba.',
+      'English and Chinese-speaking patients are welcome to contact yueclinic via Instagram DM for eye-area cosmetic surgery consultation near Tokyo and Chiba.',
     url: 'https://yueclinic.com/international-patients',
   },
 };
@@ -118,7 +118,7 @@ export default function InternationalPatientsPage() {
             Language support policy
           </h2>
           <p style={{ color: '#555', lineHeight: 1.85 }}>
-            English and Chinese messages are welcome via the official LINE. We may use translation tools when needed.
+            English and Chinese messages are welcome via Instagram DM. We may use translation tools when needed.
             Because cosmetic surgery requires accurate medical explanation and consent, important details are confirmed
             in person. If Japanese is difficult, please bring an interpreter or someone who can help you understand the
             explanation.
@@ -127,7 +127,7 @@ export default function InternationalPatientsPage() {
             英語・中国語での短い事前相談も可能です。医療説明と同意確認は安全のため重要ですので、日本語が不安な方は翻訳アプリや通訳できる方の同伴をおすすめします。
           </p>
           <p style={{ color: '#555', lineHeight: 1.85, marginTop: '0.8rem' }}>
-            欢迎通过官方 LINE 发送英文或中文咨询。由于美容外科手术需要充分理解医疗说明和同意事项，如果您不太会日语，建议使用翻译软件或与可协助翻译的人一同来院。
+            欢迎通过 Instagram 私信发送英文或中文咨询。由于美容外科手术需要充分理解医疗说明和同意事项，如果您不太会日语，建议使用翻译软件或与可协助翻译的人一同来院。
           </p>
         </section>
 
@@ -158,7 +158,7 @@ export default function InternationalPatientsPage() {
           </h2>
           <div style={{ display: 'grid', gap: '0.85rem' }}>
             {[
-              ['1. Contact us via LINE', 'Send your name, preferred procedure, preferred date, language, and whether you want same-day surgery.'],
+              ['1. Contact us via Instagram DM', 'Send your name, preferred procedure, preferred date, language, and whether you want same-day surgery.'],
               ['2. Consultation and examination', 'The doctor checks your eyelids or under-eye area, explains suitability, downtime, risks, and total cost.'],
               ['3. Consent and surgery', 'Surgery is performed only after the treatment plan and consent are understood. Same-day surgery depends on medical and schedule conditions.'],
               ['4. Aftercare', 'You can contact us after surgery if you are worried about swelling, bruising, asymmetry, or recovery.'],
@@ -211,8 +211,8 @@ export default function InternationalPatientsPage() {
         </section>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href={lineUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-            Contact via LINE
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+            Contact via Instagram DM
           </a>
           <Link href="/prices" className="btn btn--outline">
             Price list
