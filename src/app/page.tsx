@@ -85,9 +85,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
             <Link href="/reasons" className="btn btn--outline" style={{ padding: '0.75rem 1.8rem' }}>
               選ばれる理由
+            </Link>
+            <Link href="/flow" className="btn btn--outline" style={{ padding: '0.75rem 1.8rem' }}>
+              診療の流れ
             </Link>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: '医師紹介・ゆえクリの強み',
@@ -18,9 +19,13 @@ export default function Doctors() {
           <div className="doctor-strength-layout">
             <div className="doctor-strength-img">
               <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #eaeaea' }}>
-                <img 
+                <Image
                   src="/om6_actual_photo.jpg" 
                   alt="医療クオリティに直結する設備" 
+                  width={867}
+                  height={1024}
+                  sizes="(max-width: 760px) 100vw, 340px"
+                  priority
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
@@ -48,8 +53,14 @@ export default function Doctors() {
         <h2 style={{ fontSize: '1.5rem', color: 'var(--color-button)', marginBottom: '1rem' }}>小林佑紀</h2>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '1.5rem', alignItems: 'flex-start' }}>
-            <div style={{ width: '120px', flexShrink: 0 }}>
-              <img src="/doctor_face.png" alt="小林佑紀" style={{ width: '100%', height: 'auto', borderRadius: '8px', display: 'block', objectFit: 'cover', aspectRatio: '3/4' }} />
+            <div style={{ width: '120px', flexShrink: 0, position: 'relative', aspectRatio: '3 / 4', borderRadius: '8px', overflow: 'hidden' }}>
+              <Image
+                src="/doctor_face.png"
+                alt="小林佑紀"
+                fill
+                sizes="120px"
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             <div style={{ flex: 1 }}>
               <p style={{ lineHeight: '1.8', margin: 0 }}>
