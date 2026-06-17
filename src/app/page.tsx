@@ -72,6 +72,7 @@ export default function Home() {
           </h2>
           <p style={{ lineHeight: 1.75, color: '#444', marginBottom: '0.9rem' }}>
             目元専門の院長が、二重埋没法・クマ取り・眉下切開・眼瞼下垂をカウンセリングから術後まで一貫して担当します。
+            カウンセラー面談や複数人対応による待ち時間、不要なアップセルを挟まず、医師と直接話して必要な施術だけを決めます。
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: '0.55rem', marginBottom: '0.9rem' }}>
             {[

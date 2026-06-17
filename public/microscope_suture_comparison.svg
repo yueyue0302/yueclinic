@@ -1,73 +1,122 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
-  <title id="title">顕微鏡下縫合と肉眼縫合の比較イメージ</title>
-  <desc id="desc">眉下切開の縫合では、拡大視野で皮膚の層と創縁をそろえ、糸の幅と張力を細かく調整するイメージを示しています。</desc>
+  <title id="title">眉下切開における顕微鏡下縫合の比較イメージ</title>
+  <desc id="desc">眉下切開で、肉眼やルーペのみの場合と顕微鏡下で確認する場合の、創縁・皮膚層・糸の張力の違いを模式的に示しています。</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fffdf8"/>
-      <stop offset="1" stop-color="#f6f1e7"/>
+      <stop offset="1" stop-color="#f6f1e8"/>
     </linearGradient>
-    <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#3e3832" flood-opacity="0.12"/>
+    <linearGradient id="skinLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5d3bc"/>
+      <stop offset="0.5" stop-color="#f0c5ad"/>
+      <stop offset="1" stop-color="#e8b79d"/>
+    </linearGradient>
+    <linearGradient id="skinRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8d8c3"/>
+      <stop offset="0.5" stop-color="#f1c9b1"/>
+      <stop offset="1" stop-color="#e9baa1"/>
+    </linearGradient>
+    <filter id="softShadow" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#3e3832" flood-opacity="0.12"/>
     </filter>
     <style>
       .label { font-family: "Noto Sans JP", "Hiragino Sans", Arial, sans-serif; fill: #3e3832; }
-      .muted { fill: #7f7568; }
-      .accent { fill: #a89475; }
-      .line { stroke: #a89475; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-      .fine { stroke: #a89475; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
-      .skin { fill: #f5d4be; stroke: #c99078; stroke-width: 2; }
-      .dermis { fill: #efd0b5; stroke: #bf8b73; stroke-width: 1.5; }
-      .thread { stroke: #6f6254; stroke-linecap: round; fill: none; }
-      .guide { stroke: #d8ccb8; stroke-width: 2; stroke-dasharray: 8 8; }
+      .muted { fill: #776e63; }
+      .panel-title { fill: #3e3832; font-weight: 700; }
+      .hair { stroke: #665446; stroke-width: 6; stroke-linecap: round; fill: none; }
+      .fine-hair { stroke: #7f6a58; stroke-width: 3.2; stroke-linecap: round; fill: none; opacity: 0.9; }
+      .skin-outline { stroke: #c58f77; stroke-width: 2.2; fill: none; }
+      .layer-line { stroke: #d5a48b; stroke-width: 2; stroke-linecap: round; opacity: 0.75; }
+      .incision { stroke: #9f6f63; stroke-width: 3.5; stroke-linecap: round; fill: none; }
+      .suture { stroke: #5f5348; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .suture-soft { stroke: #6f6255; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .alert { fill: #b86b5d; }
+      .ok { fill: #a89475; }
+      .guide { stroke: #e7dece; stroke-width: 2; stroke-dasharray: 7 7; }
+      .chip { fill: #fdfdf9; stroke: #e6dccb; stroke-width: 1.4; }
     </style>
   </defs>
 
   <rect width="1120" height="620" rx="34" fill="url(#bg)"/>
-  <text class="label" x="560" y="58" font-size="32" font-weight="700" text-anchor="middle">眉下切開の傷跡を目立ちにくくする縫合の考え方</text>
-  <text class="label muted" x="560" y="94" font-size="17" text-anchor="middle">拡大視野では、皮膚の層・創縁・糸の張力を細かく確認しやすくなります</text>
+  <text class="label" x="560" y="55" font-size="31" font-weight="700" text-anchor="middle">眉下切開の縫合で、顕微鏡を使う意味</text>
+  <text class="label muted" x="560" y="91" font-size="17" text-anchor="middle">眉毛のすぐ下で、創縁・皮膚の層・糸の張力を細かくそろえるための確認です</text>
 
-  <g filter="url(#shadow)">
-    <rect x="70" y="135" width="455" height="405" rx="18" fill="#fff"/>
-    <rect x="595" y="135" width="455" height="405" rx="18" fill="#fff"/>
+  <g filter="url(#softShadow)">
+    <rect x="70" y="128" width="455" height="410" rx="18" fill="#fff"/>
+    <rect x="595" y="128" width="455" height="410" rx="18" fill="#fff"/>
   </g>
 
-  <text class="label" x="298" y="184" font-size="25" font-weight="700" text-anchor="middle">肉眼での縫合</text>
-  <text class="label muted" x="298" y="215" font-size="16" text-anchor="middle">層のずれや糸の張力差に気づきにくい場合があります</text>
+  <text class="label panel-title" x="298" y="176" font-size="24" text-anchor="middle">確認が粗いと起こりやすいこと</text>
+  <text class="label muted" x="298" y="206" font-size="15.5" text-anchor="middle">層の段差・糸の締めすぎ・間隔のばらつき</text>
 
-  <path class="dermis" d="M126 340 C180 300, 236 304, 288 342 C338 378, 408 374, 469 333 L469 425 C398 460, 330 462, 275 422 C221 384, 171 381, 126 420 Z"/>
-  <path class="skin" d="M126 311 C183 276, 236 286, 292 327 C343 364, 405 357, 469 317 L469 351 C407 391, 338 398, 281 358 C231 323, 181 313, 126 347 Z"/>
-  <line class="guide" x1="300" y1="278" x2="300" y2="455"/>
-  <path class="thread" stroke-width="5" d="M180 303 C187 372, 207 374, 212 319"/>
-  <path class="thread" stroke-width="5" d="M253 318 C260 389, 282 391, 286 335"/>
-  <path class="thread" stroke-width="5" d="M332 362 C340 431, 361 429, 367 371"/>
-  <path class="thread" stroke-width="5" d="M414 352 C420 419, 443 421, 447 359"/>
-  <circle cx="300" cy="327" r="9" fill="#b86b5d"/>
-  <text class="label muted" x="298" y="487" font-size="15" text-anchor="middle">創縁の段差・糸の強弱が残ると、赤みや凹凸の一因に</text>
+  <g transform="translate(112 242)">
+    <path class="hair" d="M18 35 C32 0, 58 2, 70 37"/>
+    <path class="hair" d="M70 34 C87 -4, 116 2, 126 39"/>
+    <path class="hair" d="M126 38 C141 4, 169 3, 182 38"/>
+    <path class="hair" d="M185 37 C201 1, 229 2, 241 38"/>
+    <path class="hair" d="M240 36 C258 0, 287 3, 298 38"/>
+    <path class="hair" d="M300 38 C317 2, 344 3, 356 37"/>
+    <path class="hair" d="M355 36 C374 3, 401 4, 414 38"/>
 
-  <text class="label" x="823" y="184" font-size="25" font-weight="700" text-anchor="middle">顕微鏡下での確認・縫合</text>
-  <text class="label muted" x="823" y="215" font-size="16" text-anchor="middle">皮膚の層と創縁をそろえ、細い糸で均一に寄せます</text>
+    <path d="M12 92 C82 76, 151 92, 215 78 C284 64, 346 78, 420 66 L420 178 C350 200, 285 192, 222 205 C154 219, 86 198, 12 212 Z" fill="url(#skinLeft)"/>
+    <path class="skin-outline" d="M12 92 C82 76, 151 92, 215 78 C284 64, 346 78, 420 66"/>
+    <path class="layer-line" d="M14 128 C83 113, 153 131, 214 116 C283 101, 348 119, 420 104"/>
+    <path class="layer-line" d="M14 166 C82 150, 152 174, 218 153 C284 132, 349 156, 420 139"/>
+    <path class="incision" d="M44 98 C102 86, 161 108, 218 92 C276 75, 336 96, 392 83"/>
 
-  <path class="dermis" d="M653 351 C716 318, 780 318, 834 351 C886 383, 948 383, 1010 351 L1010 425 C948 458, 886 458, 834 426 C780 394, 716 394, 653 425 Z"/>
-  <path class="skin" d="M653 318 C716 286, 780 286, 834 318 C886 350, 948 350, 1010 318 L1010 351 C948 383, 886 383, 834 351 C780 318, 716 318, 653 351 Z"/>
-  <line class="guide" x1="833" y1="278" x2="833" y2="455"/>
-  <path class="thread" stroke-width="3" d="M704 312 C710 362, 724 362, 730 313"/>
-  <path class="thread" stroke-width="3" d="M771 303 C777 354, 793 354, 799 304"/>
-  <path class="thread" stroke-width="3" d="M840 320 C846 371, 862 371, 868 321"/>
-  <path class="thread" stroke-width="3" d="M908 336 C914 386, 930 386, 936 337"/>
-  <path class="thread" stroke-width="3" d="M969 318 C975 369, 991 369, 997 319"/>
-  <circle cx="770" cy="304" r="5" fill="#a89475"/>
-  <circle cx="840" cy="320" r="5" fill="#a89475"/>
+    <path class="suture" stroke-width="4.7" d="M75 88 C82 139, 105 146, 112 101"/>
+    <path class="suture" stroke-width="5.5" d="M153 103 C161 171, 190 168, 196 94"/>
+    <path class="suture" stroke-width="3.8" d="M257 83 C263 133, 284 137, 292 93"/>
+    <path class="suture" stroke-width="5.2" d="M338 94 C347 162, 373 166, 382 84"/>
 
-  <g transform="translate(715 244)">
-    <path class="line" d="M48 8 h88 a22 22 0 0 1 22 22 v0 a22 22 0 0 1 -22 22 h-88"/>
-    <circle cx="42" cy="30" r="28" fill="none" stroke="#a89475" stroke-width="6"/>
-    <circle cx="168" cy="30" r="28" fill="none" stroke="#a89475" stroke-width="6"/>
-    <path class="fine" d="M42 58 L30 92 M168 58 L180 92 M74 92 H150"/>
+    <circle class="alert" cx="190" cy="99" r="8"/>
+    <circle class="alert" cx="292" cy="135" r="6"/>
+    <text class="label muted" x="216" y="262" font-size="14.5" text-anchor="middle">小さな段差や強い張力が、赤み・凹み・盛り上がりの一因に</text>
   </g>
-  <text class="label muted" x="823" y="487" font-size="15" text-anchor="middle">眉毛の際に沿う傷ほど、細かな縫合精度が仕上がりに影響します</text>
 
-  <g transform="translate(210 548)">
-    <circle cx="0" cy="0" r="5" fill="#a89475"/>
-    <text class="label muted" x="16" y="6" font-size="15">図は考え方を示したイメージで、実際の術野・経過には個人差があります</text>
+  <text class="label panel-title" x="823" y="176" font-size="24" text-anchor="middle">顕微鏡下でそろえること</text>
+  <text class="label muted" x="823" y="206" font-size="15.5" text-anchor="middle">創縁を合わせ、細い糸を均一な張力で置く</text>
+
+  <g transform="translate(637 242)">
+    <path class="fine-hair" d="M20 37 C35 7, 60 7, 73 38"/>
+    <path class="hair" d="M73 36 C91 1, 119 3, 131 39"/>
+    <path class="fine-hair" d="M130 38 C146 7, 173 6, 186 38"/>
+    <path class="hair" d="M188 37 C205 2, 232 3, 245 38"/>
+    <path class="fine-hair" d="M244 38 C262 7, 289 7, 301 38"/>
+    <path class="hair" d="M301 37 C319 2, 347 3, 360 38"/>
+    <path class="fine-hair" d="M359 38 C376 7, 402 8, 416 38"/>
+
+    <path d="M12 82 C80 74, 150 74, 218 82 C286 90, 352 90, 420 82 L420 194 C352 204, 286 204, 218 194 C150 184, 80 184, 12 194 Z" fill="url(#skinRight)"/>
+    <path class="skin-outline" d="M12 82 C80 74, 150 74, 218 82 C286 90, 352 90, 420 82"/>
+    <path class="layer-line" d="M14 119 C82 111, 151 111, 218 119 C286 127, 352 127, 418 119"/>
+    <path class="layer-line" d="M14 157 C82 149, 151 149, 218 157 C286 165, 352 165, 418 157"/>
+    <path class="incision" d="M42 86 C100 80, 158 80, 216 87 C275 94, 334 94, 392 87"/>
+
+    <path class="suture-soft" d="M72 82 C79 129, 96 129, 103 84"/>
+    <path class="suture-soft" d="M139 80 C146 128, 163 128, 170 82"/>
+    <path class="suture-soft" d="M207 86 C214 134, 231 134, 238 88"/>
+    <path class="suture-soft" d="M275 92 C282 140, 299 140, 306 94"/>
+    <path class="suture-soft" d="M342 91 C349 138, 366 138, 373 92"/>
+    <circle class="ok" cx="102" cy="84" r="4.5"/>
+    <circle class="ok" cx="238" cy="88" r="4.5"/>
+    <circle class="ok" cx="373" cy="92" r="4.5"/>
+
+    <g transform="translate(265 30)">
+      <circle cx="58" cy="58" r="58" fill="#fffdf8" stroke="#a89475" stroke-width="4"/>
+      <path d="M28 62 C48 52, 70 52, 90 62" stroke="#c58f77" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <path d="M28 82 C48 72, 70 72, 90 82" stroke="#d5a48b" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M43 58 C48 86, 68 86, 73 58" stroke="#5f5348" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M101 101 L137 137" stroke="#a89475" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <text class="label muted" x="216" y="262" font-size="14.5" text-anchor="middle">傷を消す道具ではなく、ズレを減らすための確認精度を上げる道具</text>
+  </g>
+
+  <g transform="translate(173 552)">
+    <rect class="chip" x="0" y="-19" width="774" height="38" rx="19"/>
+    <circle cx="23" cy="0" r="5" fill="#a89475"/>
+    <text class="label muted" x="42" y="6" font-size="15">
+      図は考え方を示す模式図です。実際の術野、傷跡、腫れ、赤みの出方には個人差があります。
+    </text>
   </g>
 </svg>
