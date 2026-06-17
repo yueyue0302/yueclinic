@@ -133,6 +133,12 @@ export default async function MenuDetail({ params }: { params: { id: string } })
   const microscopeColumnLead = itemData.id === 'futae_maibotsu'
     ? '埋没法でも、糸の通し方・結び目・ループ位置を丁寧に確認することが自然さと持続性につながります。'
     : '眉下切開では、皮膚の層・創縁・糸の張力を細かくそろえることが、傷跡の目立ちにくさにつながります。';
+  const microscopeColumnHref = itemData.id === 'futae_maibotsu'
+    ? '/columns/microscope-maibotsu'
+    : '/columns/microscope-brow-suture';
+  const microscopeColumnButtonText = itemData.id === 'futae_maibotsu'
+    ? '埋没法で顕微鏡を使う意味を読む'
+    : '顕微鏡下縫合の考え方を読む';
 
   const procedureStructuredData = {
     '@context': 'https://schema.org',
@@ -266,8 +272,8 @@ export default async function MenuDetail({ params }: { params: { id: string } })
             <p style={{ marginBottom: '1rem', lineHeight: 1.8, color: '#444' }}>
               {microscopeColumnLead}
             </p>
-            <Link href="/columns/microscope-brow-suture" className="btn btn--outline" style={{ padding: '0.75rem 1.4rem', fontSize: '0.92rem' }}>
-              顕微鏡下縫合の考え方を読む
+            <Link href={microscopeColumnHref} className="btn btn--outline" style={{ padding: '0.75rem 1.4rem', fontSize: '0.92rem' }}>
+              {microscopeColumnButtonText}
             </Link>
           </div>
         )}

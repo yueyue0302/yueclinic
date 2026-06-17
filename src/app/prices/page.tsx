@@ -220,6 +220,26 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
       usualPrice: '¥10,000',
       href: '/menus/tain_basshi',
     },
+    {
+      id: 'kajihara_referral_visit',
+      name: '梶原アイクリニック紹介のための受診',
+      parentName: '梶原アイクリニック紹介関連',
+      description: '初診料・検査代含む',
+      summary: '福岡の梶原アイクリニックで眼瞼下垂・眼瞼皮膚弛緩の手術を希望する方向けの受診です。通常のゆえクリ手術では診察料は無料です。',
+      price: '',
+      usualPrice: '¥3,000',
+      href: '/kajihara-eye-clinic',
+    },
+    {
+      id: 'kajihara_postop_suture_removal',
+      name: '梶原アイクリニックで手術後の抜糸',
+      parentName: '梶原アイクリニック紹介関連',
+      description: '梶原アイクリニック術後の抜糸',
+      summary: '梶原アイクリニックで手術を受けた方向けの術後抜糸です。ゆえクリで行った通常手術の術後抜糸代は無料です。',
+      price: '',
+      usualPrice: '¥4,000',
+      href: '/kajihara-eye-clinic',
+    },
   ],
 };
 
@@ -365,6 +385,11 @@ export default function PricesPage() {
           </div>
         </section>
       ))}
+
+      <p style={{ maxWidth: '860px', margin: '0 auto', color: '#666', fontSize: '0.86rem', lineHeight: 1.8 }}>
+        ※通常のゆえクリ美容外科手術では、診察料および当院術後の抜糸代は施術料金に含まれており無料です。
+        「梶原アイクリニック紹介関連」の受診料・抜糸料は、福岡の梶原アイクリニックで手術を希望される方向けの別枠料金です。
+      </p>
 
       <div style={{ textAlign: 'center', marginTop: '3rem' }}>
         <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
