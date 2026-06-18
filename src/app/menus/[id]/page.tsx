@@ -275,6 +275,11 @@ export default async function MenuDetail({ params }: { params: { id: string } })
             <Link href={microscopeColumnHref} className="btn btn--outline" style={{ padding: '0.75rem 1.4rem', fontSize: '0.92rem' }}>
               {microscopeColumnButtonText}
             </Link>
+            {itemData.id === 'mayushita_sekka' && (
+              <Link href="/columns/mayushita-trapdoor-deformity" className="btn btn--outline" style={{ padding: '0.75rem 1.4rem', fontSize: '0.92rem', marginLeft: '0.7rem', marginTop: '0.7rem' }}>
+                トラップドア変形と傷跡の考え方を読む
+              </Link>
+            )}
           </div>
         )}
 
