@@ -40,6 +40,16 @@ const menuDetails = menuDetailsData as Record<string, MenuDetails>;
 const detailedRowsById: Record<string, PriceTableRow[]> = {
   futae_maibotsu: [
     {
+      id: 'included_basic_fees',
+      name: '診察料・麻酔代・薬代・院長指名料',
+      parentName: '基本費用',
+      description: '通常のゆえクリ施術に含まれます',
+      summary: '表示料金に必要な基本費用を含めています。細かな名目で総額が見えにくくならないよう、診察料・麻酔代・薬代・院長指名料を別途請求していません。',
+      price: '¥0',
+      usualPrice: '¥0',
+      href: '/prices',
+    },
+    {
       id: 'futae_maibotsu',
       name: '二重埋没法（自然癒着法６往復）',
       parentName: '二重埋没法',
