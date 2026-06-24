@@ -81,6 +81,23 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       },
     };
   }
+  if (itemData.id === 'ganken_masaki') {
+    return {
+      title: '真崎式 切らない眼瞼下垂｜ミュラー筋・挙筋腱膜タッキング',
+      description:
+        '市川・本八幡・船橋エリアで真崎式 切らない眼瞼下垂を相談するならyueclinic。切開せずにミュラー筋と挙筋腱膜を糸でタッキングし、瞼板も固定点として使う方法です。眉下切開との組み合わせも相談できます。',
+      alternates: {
+        canonical: '/menus/ganken_masaki',
+      },
+      openGraph: {
+        title: '真崎式 切らない眼瞼下垂 | yueclinic',
+        description:
+          '切開せずに目の開きを調整する真崎式 切らない眼瞼下垂。ミュラー筋・挙筋腱膜・瞼板固定、眉下切開との相性まで説明します。',
+        url: 'https://yueclinic.com/menus/ganken_masaki',
+        type: 'article',
+      },
+    };
+  }
   return {
     title: `${itemData.name}`,
     description: `${itemData.name}の料金は${priceLabel}${priceText}。市川・鬼越駅前の目元専門美容外科 yueclinic で、院長がカウンセリングから施術、術後フォローまで一貫して担当します。`,

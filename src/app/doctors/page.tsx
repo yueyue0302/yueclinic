@@ -76,7 +76,7 @@ export default function Doctors() {
               <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2022年</span><span>大手美容外科 千葉院</span></li>
               <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2023年</span><span>e-clinic 東京</span></li>
               <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2024〜2026</span><span>美容外科 広島院院長</span></li>
-              <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2025〜現在</span><span>梶原アイクリニック（保険瞼専門）</span></li>
+              <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2025〜現在</span><span>梶原アイクリニック（保険瞼専門）非常勤</span></li>
               <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2025〜現在</span><span>ファミリィアイクリニック 眼瞼部門立ち上げ・手術＋外来 担当（保険）</span></li>
               <li style={{ display: 'flex' }}><span style={{ width: '90px', flexShrink: 0, fontWeight: 'bold' }}>2026年〜</span><span style={{ color: 'var(--color-button)', fontWeight: 'bold' }}>yue clinic開設</span></li>
             </ul>

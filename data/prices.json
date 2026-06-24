@@ -11,6 +11,12 @@
           "description": "自然癒着法６点"
         },
         {
+          "id": "ganken_masaki",
+          "name": "真崎式 切らない眼瞼下垂",
+          "price": 100000,
+          "description": "切らずに目の開きを調整"
+        },
+        {
           "id": "mayushita_sekka",
           "name": "眉下切開",
           "price": 120000,

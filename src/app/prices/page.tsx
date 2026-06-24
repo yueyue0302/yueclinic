@@ -61,17 +61,6 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
       href: '/menus/futae_maibotsu',
     },
     {
-      id: 'ganken_masaki_in_futae',
-      name: '真崎式 切らない眼瞼下垂',
-      parentName: '二重埋没法',
-      description: '同時に目の開きを調整したい場合のみ',
-      summary: '目つき矯正として、まぶたの裏側から目の開きを調整します。',
-      price: '¥100,000',
-      priceLabel: 'モニター価格',
-      usualPrice: '¥200,000',
-      href: '/menus/futae_maibotsu',
-    },
-    {
       id: 'uwamabuta_dasshi_in_futae',
       name: '上まぶた脂肪とり',
       parentName: '二重埋没法',
@@ -81,6 +70,19 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
       priceLabel: 'モニター価格',
       usualPrice: '¥40,000',
       href: '/menus/futae_maibotsu',
+    },
+  ],
+  ganken_masaki: [
+    {
+      id: 'ganken_masaki',
+      name: '真崎式 切らない眼瞼下垂',
+      parentName: '切らない眼瞼下垂',
+      description: 'ミュラー筋・挙筋腱膜タッキング',
+      summary: '切開せず、ミュラー筋と挙筋腱膜を糸でタッキング。眉下切開との組み合わせも相談できます。',
+      price: '¥100,000',
+      priceLabel: 'モニター価格',
+      usualPrice: '¥200,000',
+      href: '/menus/ganken_masaki',
     },
   ],
   kuma_tori: [
