@@ -31,7 +31,7 @@ type PriceTableRow = {
   price: string;
   priceLabel?: string;
   usualPrice?: string;
-  href: string;
+  href?: string;
 };
 
 const categories = pricesData.categories as PriceCategory[];
@@ -41,13 +41,12 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
   futae_maibotsu: [
     {
       id: 'included_basic_fees',
-      name: '診察料・麻酔代・薬代・院長指名料',
+      name: '診察料・麻酔代・薬代・院長指名料・当院手術の抜糸代',
       parentName: '基本費用',
       description: '通常のゆえクリ施術に含まれます',
-      summary: '表示料金に必要な基本費用を含めています。細かな名目で総額が見えにくくならないよう、診察料・麻酔代・薬代・院長指名料を別途請求していません。',
+      summary: '表示料金に必要な基本費用を含めています。細かな名目で総額が見えにくくならないよう、診察料・麻酔代・薬代・院長指名料・当院手術の抜糸代を別途請求していません。',
       price: '¥0',
       usualPrice: '¥0',
-      href: '/prices',
     },
     {
       id: 'futae_maibotsu',
@@ -181,7 +180,6 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
     {
       id: 'scarless_futae',
       name: '二重全切開',
-      parentName: '二重切開・眼瞼下垂',
       description: '通常切開 / スカーレス切開',
       summary: '埋没法では難しい厚み・たるみを切開で整えます。',
       price: '¥180,000',
@@ -192,7 +190,6 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
     {
       id: 'scarless_ganken',
       name: '眼瞼下垂',
-      parentName: '二重切開・眼瞼下垂',
       description: '通常切開 / スカーレス切開',
       summary: '目の開きに関わる筋肉・腱膜を調整し、眠そうな印象を改善します。',
       price: '¥220,000',
@@ -313,7 +310,7 @@ export default function PricesPage() {
       '@type': 'ListItem',
       position: index + 1,
       name: row.name,
-      url: `https://yueclinic.com${row.href}`,
+      url: `https://yueclinic.com${row.href || '/prices'}`,
     })),
   };
 
@@ -365,9 +362,13 @@ export default function PricesPage() {
                 {category.items.flatMap(tableRowsForItem).map((row) => (
                     <tr key={row.id}>
                       <td className="prices-table__menu">
-                        <Link href={row.href} className="prices-table__menu-link">
-                          {row.name}
-                        </Link>
+                        {row.href ? (
+                          <Link href={row.href} className="prices-table__menu-link">
+                            {row.name}
+                          </Link>
+                        ) : (
+                          <span className="prices-table__menu-link">{row.name}</span>
+                        )}
                         {row.parentName && (
                           <span className="prices-table__description">{row.parentName}</span>
                         )}
@@ -386,9 +387,13 @@ export default function PricesPage() {
                         {row.summary}
                       </td>
                       <td className="prices-table__detail">
-                        <Link href={row.href} className="prices-table__detail-link">
-                          詳細
-                        </Link>
+                        {row.href ? (
+                          <Link href={row.href} className="prices-table__detail-link">
+                            詳細
+                          </Link>
+                        ) : (
+                          <span>-</span>
+                        )}
                       </td>
                     </tr>
                 ))}
