@@ -150,11 +150,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '-1.5rem', display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <span style={{ color: '#888', fontSize: '0.75rem' }}>＊保証・針糸代・麻酔代含む</span>
-          <span style={{ color: '#888', fontSize: '0.75rem' }}>＊上記はモニター価格</span>
-          <span style={{ color: '#888', fontSize: '0.75rem' }}>＊片目は30％off</span>
-        </div>
         <div style={{ textAlign: 'center', marginTop: '1.4rem' }}>
           <Link href="/prices" className="btn btn--outline" style={{ padding: '0.8rem 2rem' }}>
             料金表を一覧で見る

@@ -41,10 +41,10 @@ const detailedRowsById: Record<string, PriceTableRow[]> = {
   futae_maibotsu: [
     {
       id: 'included_basic_fees',
-      name: '診察料・麻酔代・薬代・院長指名料・当院手術の抜糸代',
+      name: '診察料・麻酔代・薬代・院長指名料・当院手術の抜糸代・消費税',
       parentName: '基本費用',
       description: '通常のゆえクリ施術に含まれます',
-      summary: '表示料金に必要な基本費用を含めています。細かな名目で総額が見えにくくならないよう、診察料・麻酔代・薬代・院長指名料・当院手術の抜糸代を別途請求していません。',
+      summary: '表示料金に必要な基本費用を含めています。細かな名目で総額が見えにくくならないよう、診察料・麻酔代・薬代・院長指名料・当院手術の抜糸代・消費税を別途請求していません。',
       price: '¥0',
       usualPrice: '¥0',
     },
@@ -325,8 +325,9 @@ export default function PricesPage() {
         <p style={{ color: 'var(--color-button)', fontWeight: 600, marginBottom: '0.8rem' }}>
           目元専門 yueclinic
         </p>
-        <h1 className="section__title" style={{ marginBottom: '1.2rem' }}>
-          メニュー・料金表
+        <h1 className="section__title" style={{ marginBottom: '1.2rem', display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '0.7rem', flexWrap: 'wrap' }}>
+          <span>メニュー・料金表</span>
+          <span style={{ color: '#888', fontSize: '0.78rem', fontWeight: 400 }}>＊片目は３０％off</span>
         </h1>
       </header>
 

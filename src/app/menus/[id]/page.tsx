@@ -31,6 +31,26 @@ interface MenuDetails {
   footerNote?: string;
 }
 
+const monitorConditionsById: Record<string, string> = {
+  futae_maibotsu: '術後1〜2か月で写真撮影にご来院いただける方',
+  kuma_tori: '術後3か月で写真撮影にご来院いただける方',
+  ura_dasshi: '術後3か月で写真撮影にご来院いただける方',
+  ura_hamura: '術後3か月で写真撮影にご来院いただける方',
+  omote_hamura: '術後3か月で写真撮影にご来院いただける方',
+  shita_ganken: '術後3か月で写真撮影にご来院いただける方',
+  mayushita_sekka: '術後3か月で写真撮影にご来院いただける方',
+  ganken_masaki: '術後2か月・4か月で写真撮影にご来院いただける方',
+  sekkai_ganken: '術後2か月・4か月で写真撮影にご来院いただける方',
+  scarless_futae: '術後2か月・4か月で写真撮影にご来院いただける方',
+  scarless_ganken: '術後2か月・4か月で写真撮影にご来院いただける方',
+  ura_ganken: '術後2か月・4か月で写真撮影にご来院いただける方',
+  megashira_sekkai: '術後2か月で写真撮影にご来院いただける方',
+  mejiri_sekka: '術後2か月で写真撮影にご来院いただける方',
+  tareme_keisei: '術後2か月で写真撮影にご来院いただける方',
+  mejiri_jintai: '術後2か月で写真撮影にご来院いただける方',
+  mejiri_tareme: '術後2か月で写真撮影にご来院いただける方',
+};
+
 // Define the static paths so Next.js knows what dynamic pages to build
 export async function generateStaticParams() {
   const allItems = (pricesData.categories as PriceCategory[]).flatMap(cat => cat.items);
@@ -141,6 +161,7 @@ export default async function MenuDetail({ params }: { params: { id: string } })
     ...((menuDetailsData as Record<string, Partial<MenuDetails>>)[itemData.id] || {}),
   };
   const priceLabel = itemData.id === 'tain_basshi' ? '定価' : 'モニター価格';
+  const monitorCondition = monitorConditionsById[itemData.id];
   const isPriorityMenu = itemData.id === 'futae_maibotsu' || itemData.id === 'mayushita_sekka';
   const priorityCampaignText = itemData.id === 'futae_maibotsu'
     ? '二重埋没法 ¥68,000'
@@ -327,6 +348,12 @@ export default async function MenuDetail({ params }: { params: { id: string } })
             <h2 style={{ fontSize: '1.3rem', borderBottom: '1px solid var(--color-accent-light)', paddingBottom: '0.8rem', marginBottom: '1.5rem' }}>料金シミュレーション</h2>
             <div style={{ lineHeight: '1.8', color: '#444', background: '#fcfaf6', border: '1px solid var(--color-accent-light)', padding: '1.5rem', borderRadius: '8px' }} dangerouslySetInnerHTML={{ __html: details.priceSimulation }}>
             </div>
+            {monitorCondition && (
+              <p style={{ margin: '0.8rem 0 0', color: '#666', fontSize: '0.88rem', lineHeight: 1.7 }}>
+                <span style={{ fontWeight: 700, color: '#5f5a54' }}>モニター条件：</span>
+                {monitorCondition}
+              </p>
+            )}
           </div>
         )}
 
