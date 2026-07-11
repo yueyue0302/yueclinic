@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { clinicGoogleMapsEmbedUrl, clinicGoogleMapsUrl } from '../../lib/clinicMap';
 
@@ -25,6 +26,30 @@ const routes = [
   ['京成中山・下総中山', '京成本線で1駅', '約2分'],
   ['市川真間', '京成本線で2駅', '約4分'],
   ['京成津田沼', '京成本線で乗り換えなし', '約15分'],
+];
+
+const routePhotos = [
+  {
+    title: '1. 鬼越駅の改札を出ます',
+    body: '改札を出たら右へ進みます。線路の先に、青っぽい小林メディカルビルが見えます。',
+    src: '/access-onigoe-station.webp',
+    alt: '鬼越駅の改札からyueclinicのビルが見える写真',
+    height: '360px',
+  },
+  {
+    title: '2. 小林メディカルビルの前へ',
+    body: '線路を渡るとすぐにビル前です。1階に小林医院があり、yueclinicは同じビルの2階です。',
+    src: '/access-yueclinic-building.webp',
+    alt: 'yueclinicが入る小林メディカルビルの外観',
+    height: '520px',
+  },
+  {
+    title: '3. 左側の階段で2階へ',
+    body: '入口左側の階段を上がって2階へお越しください。',
+    src: '/access-yueclinic-stairs.webp',
+    alt: '小林メディカルビル入口と2階へ上がる階段',
+    height: '520px',
+  },
 ];
 
 export default function AccessPage() {
@@ -77,6 +102,38 @@ export default function AccessPage() {
         <p style={{ lineHeight: 1.9, color: '#444', marginBottom: 0 }}>
           鬼越駅の改札を出て右へ進み、線路を渡って薬局の左側にある青っぽいビルの2階です。
         </p>
+      </section>
+
+      <section style={{ marginBottom: '3rem' }}>
+        <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1rem', textAlign: 'center' }}>
+          鬼越駅からの行き方
+        </h2>
+        <p style={{ lineHeight: 1.8, color: '#555', maxWidth: '720px', margin: '0 auto 1.5rem', textAlign: 'left' }}>
+          改札を出てからビル入口まではすぐです。写真の順に、駅からビル前、階段へお進みください。
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}>
+          {routePhotos.map((photo) => (
+            <article key={photo.src} style={{ border: '1px solid var(--color-accent-light)', borderRadius: '8px', overflow: 'hidden', background: '#fff' }}>
+              <div style={{ position: 'relative', width: '100%', height: photo.height, background: '#f6f3ee' }}>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 860px"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+              <div style={{ padding: '1rem 1.2rem' }}>
+                <h3 style={{ color: 'var(--color-button)', fontSize: '1.05rem', marginBottom: '0.45rem' }}>
+                  {photo.title}
+                </h3>
+                <p style={{ color: '#555', lineHeight: 1.75, margin: 0 }}>
+                  {photo.body}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section style={{ marginBottom: '3rem' }}>
