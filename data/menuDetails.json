@@ -45,7 +45,7 @@
     "instagramUrls": [
       "https://www.instagram.com/p/DOq99U5krkZ/embed",
       "https://www.instagram.com/p/DP6BJx1Ev6V/embed",
-      "https://www.instagram.com/p/DBYsVcMztTE/embed"
+      "https://www.instagram.com/p/C_clURKyRFS/embed"
     ]
   },
   "sekkai_ganken": {
@@ -204,6 +204,10 @@
     "imagePaths": [
       "/diag_brow1.png",
       "/diag_brow2.png"
+    ],
+    "instagramUrls": [
+      "https://www.instagram.com/p/DaA8sMcEgKi/embed",
+      "https://www.instagram.com/p/Dae5bf3Er57/embed"
     ]
   },
   "megashira_sekkai": {
@@ -758,7 +762,7 @@
       "/diag_bag.png"
     ],
     "instagramUrls": [
-      "https://www.instagram.com/p/DADZngPzXn2/embed?img_index=2",
+      "https://www.instagram.com/p/DADZngPzXn2/embed/?img_index=2",
       "https://www.instagram.com/p/C6vxfq2veIO/embed",
       "https://www.instagram.com/p/DBYsVcMztTE/embed"
     ]

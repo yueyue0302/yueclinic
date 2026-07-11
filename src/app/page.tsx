@@ -115,7 +115,7 @@ export default function Home() {
           {(pricesData.categories as HomePriceCategory[]).map((category) => (
             <div key={category.id} className="price-category">
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', columnGap: '0.8rem', rowGap: '0.4rem' }}>
-                {category.items.map((item) => (
+                {category.items.filter((item) => item.id !== 'ganken_masaki').map((item) => (
                   <Link href={`/menus/${item.id}`} key={item.id} className="price-item" style={{ 
                     padding: '0.8rem 0', 
                     textDecoration: 'none', 
