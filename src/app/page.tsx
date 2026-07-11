@@ -65,38 +65,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: '0.5rem', paddingBottom: '1.6rem', maxWidth: '820px' }}>
-        <div style={{ background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '1.2rem' }}>
-          <h2 style={{ color: 'var(--color-button)', fontSize: '1.25rem', marginBottom: '0.6rem', textAlign: 'center' }}>
-            はじめて比較する方へ
-          </h2>
-          <p style={{ lineHeight: 1.75, color: '#444', marginBottom: '0.9rem' }}>
-            目元専門の院長が、二重埋没法・クマ取り・眉下切開・眼瞼下垂をカウンセリングから術後まで一貫して担当します。
-            説明と診察で担当者が分かれる流れや、何もしない待ち時間、不要なアップセルを挟まず、医師と直接話して必要な施術だけを決めます。
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: '0.55rem', marginBottom: '0.9rem' }}>
-            {[
-              '目元専門',
-              '院長一貫',
-              '顕微鏡手術',
-              '総額表示',
-            ].map((text) => (
-              <div key={text} style={{ background: '#fff', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '0.55rem', color: '#444', textAlign: 'center', fontWeight: 600, fontSize: '0.9rem' }}>
-                {text}
-              </div>
-            ))}
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <Link href="/reasons" className="btn btn--outline" style={{ padding: '0.75rem 1.8rem' }}>
-              選ばれる理由
-            </Link>
-            <Link href="/flow" className="btn btn--outline" style={{ padding: '0.75rem 1.8rem' }}>
-              診療の流れ
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Price Section */}
       <section id="price" className="section bg-light" style={{ paddingTop: '0.4rem', paddingBottom: '2.5rem' }}>
         <h2 className="section__title" style={{ marginBottom: '1rem' }}>メニュー・料金</h2>

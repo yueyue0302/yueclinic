@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
 import Header from '../components/Header';
+import AnalyticsEvents from '../components/AnalyticsEvents';
 
 const notoSansJP = Noto_Sans_JP({
   variable: '--font-noto-sans-jp',
@@ -74,6 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body className={notoSansJP.className}>
+        <AnalyticsEvents />
         {/* MedicalClinic Structured Data */}
         <script
           type="application/ld+json"
