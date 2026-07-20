@@ -18,6 +18,8 @@ type HomePriceCategory = {
   items: HomePriceItem[];
 };
 
+const hiddenHomePriceItemIds = new Set(['ganken_masaki', 'tain_basshi']);
+
 export const metadata: Metadata = {
   title: '目元専門の美容外科・眼形成',
   description: '市川・本八幡・船橋エリアで二重整形、クマ取り、眉下切開、眼瞼下垂を相談できる目元専門美容外科。ゆえクリ（ゆえくりにっく）は院長一貫対応、ワンプライス制、鬼越駅徒歩20秒。',
@@ -83,7 +85,7 @@ export default function Home() {
           {(pricesData.categories as HomePriceCategory[]).map((category) => (
             <div key={category.id} className="price-category">
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', columnGap: '0.8rem', rowGap: '0.4rem' }}>
-                {category.items.filter((item) => item.id !== 'ganken_masaki').map((item) => (
+                {category.items.filter((item) => !hiddenHomePriceItemIds.has(item.id)).map((item) => (
                   <Link href={`/menus/${item.id}`} key={item.id} className="price-item" style={{ 
                     padding: '0.8rem 0', 
                     textDecoration: 'none', 
