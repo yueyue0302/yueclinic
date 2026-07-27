@@ -348,58 +348,61 @@ export default function PricesPage() {
           <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1.2rem' }}>
             {category.name}
           </h2>
-          <div className="prices-table-wrap">
-            <table className="prices-table">
-              <thead>
-                <tr>
-                  <th>施術</th>
-                  <th>モニター価格</th>
-                  <th>通常料金</th>
-                  <th>内容</th>
-                  <th>詳細</th>
-                </tr>
-              </thead>
-              <tbody>
-                {category.items.flatMap(tableRowsForItem).map((row) => (
-                    <tr key={row.id}>
-                      <td className="prices-table__menu">
-                        {row.href ? (
-                          <Link href={row.href} className="prices-table__menu-link">
-                            {row.name}
-                          </Link>
-                        ) : (
-                          <span className="prices-table__menu-link">{row.name}</span>
-                        )}
-                        {row.parentName && (
-                          <span className="prices-table__description">{row.parentName}</span>
-                        )}
-                        {row.description && (
-                          <span className="prices-table__subdescription">{row.description}</span>
-                        )}
-                      </td>
-                      <td className="prices-table__price">
-                        <span>{row.price || '—'}</span>
-                        {row.priceLabel && <small>{row.priceLabel}</small>}
-                      </td>
-                      <td className="prices-table__usual">
-                        {row.usualPrice || '—'}
-                      </td>
-                      <td className="prices-table__summary">
-                        {row.summary}
-                      </td>
-                      <td className="prices-table__detail">
-                        {row.href ? (
-                          <Link href={row.href} className="prices-table__detail-link">
-                            詳細
-                          </Link>
-                        ) : (
-                          <span>-</span>
-                        )}
-                      </td>
-                    </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="prices-table-scroll-frame">
+            <div className="prices-table-scroll-cue" aria-hidden="true">→</div>
+            <div className="prices-table-wrap">
+              <table className="prices-table">
+                <thead>
+                  <tr>
+                    <th>施術</th>
+                    <th>モニター価格</th>
+                    <th>通常料金</th>
+                    <th>内容</th>
+                    <th>詳細</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {category.items.flatMap(tableRowsForItem).map((row) => (
+                      <tr key={row.id}>
+                        <td className="prices-table__menu">
+                          {row.href ? (
+                            <Link href={row.href} className="prices-table__menu-link">
+                              {row.name}
+                            </Link>
+                          ) : (
+                            <span className="prices-table__menu-link">{row.name}</span>
+                          )}
+                          {row.parentName && (
+                            <span className="prices-table__description">{row.parentName}</span>
+                          )}
+                          {row.description && (
+                            <span className="prices-table__subdescription">{row.description}</span>
+                          )}
+                        </td>
+                        <td className="prices-table__price">
+                          <span>{row.price || '—'}</span>
+                          {row.priceLabel && <small>{row.priceLabel}</small>}
+                        </td>
+                        <td className="prices-table__usual">
+                          {row.usualPrice || '—'}
+                        </td>
+                        <td className="prices-table__summary">
+                          {row.summary}
+                        </td>
+                        <td className="prices-table__detail">
+                          {row.href ? (
+                            <Link href={row.href} className="prices-table__detail-link">
+                              詳細
+                            </Link>
+                          ) : (
+                            <span>-</span>
+                          )}
+                        </td>
+                      </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       ))}

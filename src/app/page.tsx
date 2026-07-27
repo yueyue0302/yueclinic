@@ -120,7 +120,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '1.4rem' }}>
+        <div style={{ textAlign: 'center', marginTop: '0.55rem' }}>
           <Link href="/prices" className="btn btn--outline" style={{ padding: '0.8rem 2rem' }}>
             料金表を一覧で見る
           </Link>
