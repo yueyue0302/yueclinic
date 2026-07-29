@@ -175,27 +175,8 @@ body:has(.estimate-page) .floating-reservation {
   font-size: 0.8rem;
 }
 
-.estimate-total {
-  margin: 2rem 0 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem 1.1rem;
-  border: 2px solid #25384a;
-  background: #f7f8f9;
-}
-
-.estimate-total span {
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.estimate-total strong {
-  font-size: 1.55rem;
-  letter-spacing: 0;
-}
-
 .estimate-table-wrap {
+  margin-top: 2rem;
   width: 100%;
   overflow-x: auto;
 }
@@ -297,6 +278,7 @@ body:has(.estimate-page) .floating-reservation {
 }
 
 .estimate-summary .estimate-summary__total {
+  position: relative;
   border: 2px solid #25384a;
   border-top: 0;
 }
@@ -304,6 +286,27 @@ body:has(.estimate-page) .floating-reservation {
 .estimate-summary__total dt,
 .estimate-summary__total dd {
   font-size: 1rem;
+}
+
+.estimate-summary__remove {
+  position: absolute;
+  top: 50%;
+  right: -34px;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%);
+  border: 1px solid #d8bcbc;
+  border-radius: 50%;
+  background: #fff;
+  color: #8b3c3c;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.estimate-summary__remove:hover {
+  background: #fff4f4;
 }
 
 .estimate-notes {
@@ -375,7 +378,8 @@ body:has(.estimate-page) .floating-reservation {
 }
 
 .estimate-sheet--saving .estimate-add-row,
-.estimate-sheet--saving .estimate-table__remove {
+.estimate-sheet--saving .estimate-table__remove,
+.estimate-sheet--saving .estimate-summary__remove {
   display: none;
 }
 
@@ -459,7 +463,8 @@ body:has(.estimate-page) .floating-reservation {
   body:has(.estimate-page) .floating-reservation,
   .estimate-toolbar,
   .estimate-add-row,
-  .estimate-table__remove {
+  .estimate-table__remove,
+  .estimate-summary__remove {
     display: none !important;
   }
 

@@ -25,6 +25,20 @@ const today = () => {
   return new Date(now.getTime() - offset).toISOString().slice(0, 10);
 };
 
+const addMonths = (value: string, months: number) => {
+  if (!value) return '';
+
+  const [year, month, day] = value.split('-').map(Number);
+  const targetMonth = month - 1 + months;
+  const targetYear = year + Math.floor(targetMonth / 12);
+  const normalizedMonth = ((targetMonth % 12) + 12) % 12;
+  const lastDay = new Date(targetYear, normalizedMonth + 1, 0).getDate();
+  const target = new Date(targetYear, normalizedMonth, Math.min(day, lastDay));
+  const offset = target.getTimezoneOffset() * 60_000;
+
+  return new Date(target.getTime() - offset).toISOString().slice(0, 10);
+};
+
 const formatDate = (value: string) => {
   if (!value) return '';
   const [year, month, day] = value.split('-');
@@ -40,7 +54,7 @@ export default function EstimatePrintPage() {
   const sheetRef = useRef<HTMLElement>(null);
   const [estimateNumber, setEstimateNumber] = useState('');
   const [issueDate, setIssueDate] = useState(today);
-  const [validUntil, setValidUntil] = useState('');
+  const [validUntil, setValidUntil] = useState(() => addMonths(today(), 6));
   const [patientName, setPatientName] = useState('');
   const [items, setItems] = useState<EstimateItem[]>([
     createItem(1),
@@ -52,6 +66,7 @@ export default function EstimatePrintPage() {
   );
   const [nextId, setNextId] = useState(4);
   const [isSavingPdf, setIsSavingPdf] = useState(false);
+  const [showTotal, setShowTotal] = useState(true);
 
   const subtotal = useMemo(
     () => items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0),
@@ -89,13 +104,14 @@ export default function EstimatePrintPage() {
 
     setEstimateNumber('');
     setIssueDate(today());
-    setValidUntil('');
+    setValidUntil(addMonths(today(), 6));
     setPatientName('');
     setItems([createItem(1), createItem(2), createItem(3)]);
     setNotes(
       '上記金額には消費税が含まれています。\n施術内容は診察結果により変更となる場合があります。',
     );
     setNextId(4);
+    setShowTotal(true);
   };
 
   const savePdf = async () => {
@@ -237,7 +253,11 @@ export default function EstimatePrintPage() {
                   aria-label="発行日"
                   type="date"
                   value={issueDate}
-                  onChange={(event) => setIssueDate(event.target.value)}
+                  onInput={(event) => {
+                    const nextIssueDate = event.currentTarget.value;
+                    setIssueDate(nextIssueDate);
+                    setValidUntil(addMonths(nextIssueDate, 6));
+                  }}
                 />
                 <span className="estimate-print-value">{formatDate(issueDate)}</span>
               </dd>
@@ -268,11 +288,6 @@ export default function EstimatePrintPage() {
             <span>様</span>
           </label>
           <p>下記の通り御見積申し上げます。</p>
-        </section>
-
-        <section className="estimate-total">
-          <span>御見積金額（税込）</span>
-          <strong>{formatYen(total)}</strong>
         </section>
 
         <div className="estimate-table-wrap">
@@ -370,10 +385,21 @@ export default function EstimatePrintPage() {
               <dt>割引合計</dt>
               <dd>− {formatYen(totalDiscount)}</dd>
             </div>
-            <div className="estimate-summary__total">
-              <dt>合計（税込）</dt>
-              <dd>{formatYen(total)}</dd>
-            </div>
+            {showTotal && (
+              <div className="estimate-summary__total">
+                <dt>合計（税込）</dt>
+                <dd>{formatYen(total)}</dd>
+                <button
+                  type="button"
+                  className="estimate-summary__remove"
+                  onClick={() => setShowTotal(false)}
+                  aria-label="合計金額を削除"
+                  title="合計金額を削除"
+                >
+                  ×
+                </button>
+              </div>
+            )}
           </dl>
         </section>
 
