@@ -411,19 +411,6 @@ a:hover {
     -webkit-overflow-scrolling: touch;
   }
 
-  .prices-table-scroll-frame::after {
-    content: "";
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    width: 86px;
-    border-radius: 0 8px 8px 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #fff 54%, #fff 100%);
-    pointer-events: none;
-    z-index: 2;
-  }
-
   .prices-table-scroll-cue {
     align-items: center;
     animation: scroll-cue-nudge 1.8s ease-in-out infinite;
@@ -439,13 +426,11 @@ a:hover {
     justify-content: center;
     letter-spacing: 0.02em;
     line-height: 1;
+    margin: -0.4rem 0 0.45rem auto;
     padding: 0 0.72rem;
     pointer-events: none;
-    position: absolute;
-    right: 0.45rem;
-    top: 0.55rem;
     white-space: nowrap;
-    z-index: 3;
+    width: fit-content;
   }
 
   @keyframes scroll-cue-nudge {
