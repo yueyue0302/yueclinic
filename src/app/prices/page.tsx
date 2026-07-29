@@ -349,7 +349,7 @@ export default function PricesPage() {
             {category.name}
           </h2>
           <div className="prices-table-scroll-frame">
-            <div className="prices-table-scroll-cue" aria-hidden="true">→</div>
+            <div className="prices-table-scroll-cue" aria-hidden="true">右にスクロール →</div>
             <div className="prices-table-wrap">
               <table className="prices-table">
                 <thead>

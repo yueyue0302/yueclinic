@@ -417,32 +417,45 @@ a:hover {
     top: 1px;
     right: 1px;
     bottom: 1px;
-    width: 52px;
+    width: 86px;
     border-radius: 0 8px 8px 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #fff 72%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #fff 54%, #fff 100%);
     pointer-events: none;
     z-index: 2;
   }
 
   .prices-table-scroll-cue {
     align-items: center;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid var(--color-accent-light);
+    animation: scroll-cue-nudge 1.8s ease-in-out infinite;
+    background: rgba(117, 79, 53, 0.94);
+    border: 1px solid rgba(117, 79, 53, 0.16);
     border-radius: 999px;
-    box-shadow: 0 4px 14px rgba(88, 70, 55, 0.12);
-    color: var(--color-button);
+    box-shadow: 0 6px 18px rgba(88, 70, 55, 0.2);
+    color: #fff;
     display: flex;
-    font-size: 1rem;
+    font-size: 0.74rem;
     font-weight: 700;
-    height: 28px;
+    height: 30px;
     justify-content: center;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    padding: 0 0.72rem;
     pointer-events: none;
     position: absolute;
-    right: 0.55rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 28px;
+    right: 0.45rem;
+    top: 0.55rem;
+    white-space: nowrap;
     z-index: 3;
+  }
+
+  @keyframes scroll-cue-nudge {
+    0%, 100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(4px);
+    }
   }
 }
 
