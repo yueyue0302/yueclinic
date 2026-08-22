@@ -6,17 +6,13 @@ import './estimate-print.css';
 type EstimateItem = {
   id: number;
   name: string;
-  quantity: number;
-  unitPrice: number;
-  discount: number;
+  amount: number;
 };
 
 const createItem = (id: number): EstimateItem => ({
   id,
   name: '',
-  quantity: 1,
-  unitPrice: 0,
-  discount: 0,
+  amount: 0,
 });
 
 const today = () => {
@@ -68,15 +64,10 @@ export default function EstimatePrintPage() {
   const [isSavingPdf, setIsSavingPdf] = useState(false);
   const [showTotal, setShowTotal] = useState(true);
 
-  const subtotal = useMemo(
-    () => items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0),
+  const total = useMemo(
+    () => items.reduce((sum, item) => sum + item.amount, 0),
     [items],
   );
-  const totalDiscount = useMemo(
-    () => items.reduce((sum, item) => sum + item.discount, 0),
-    [items],
-  );
-  const total = Math.max(0, subtotal - totalDiscount);
 
   const updateItem = <K extends keyof EstimateItem>(
     id: number,
@@ -295,78 +286,46 @@ export default function EstimatePrintPage() {
             <thead>
               <tr>
                 <th className="estimate-table__name">施術・内容</th>
-                <th>数量</th>
-                <th>単価（税込）</th>
-                <th>割引</th>
-                <th>金額</th>
+                <th>金額（税込）</th>
                 <th className="estimate-table__remove" aria-label="削除" />
               </tr>
             </thead>
             <tbody>
-              {items.map((item) => {
-                const amount = Math.max(0, item.quantity * item.unitPrice - item.discount);
-                return (
-                  <tr key={item.id}>
-                    <td>
-                      <input
-                        aria-label="施術・内容"
-                        value={item.name}
-                        onChange={(event) => updateItem(item.id, 'name', event.target.value)}
-                        placeholder="施術名・麻酔代など"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        aria-label="数量"
-                        type="number"
-                        min="0"
-                        step="1"
-                        value={item.quantity}
-                        onChange={(event) =>
-                          updateItem(item.id, 'quantity', Math.max(0, Number(event.target.value)))
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input
-                        aria-label="単価"
-                        type="number"
-                        min="0"
-                        step="1000"
-                        value={item.unitPrice || ''}
-                        onChange={(event) =>
-                          updateItem(item.id, 'unitPrice', Math.max(0, Number(event.target.value)))
-                        }
-                        placeholder="0"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        aria-label="割引"
-                        type="number"
-                        min="0"
-                        step="1000"
-                        value={item.discount || ''}
-                        onChange={(event) =>
-                          updateItem(item.id, 'discount', Math.max(0, Number(event.target.value)))
-                        }
-                        placeholder="0"
-                      />
-                    </td>
-                    <td className="estimate-table__amount">{formatYen(amount)}</td>
-                    <td className="estimate-table__remove">
-                      <button
-                        type="button"
-                        onClick={() => removeItem(item.id)}
-                        aria-label={`${item.name || '行'}を削除`}
-                        title="行を削除"
-                      >
-                        ×
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {items.map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <input
+                      aria-label="施術・内容"
+                      value={item.name}
+                      onChange={(event) => updateItem(item.id, 'name', event.target.value)}
+                      placeholder="施術名・麻酔代など"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      aria-label="金額（税込）"
+                      type="number"
+                      min="0"
+                      step="1000"
+                      value={item.amount || ''}
+                      onChange={(event) =>
+                        updateItem(item.id, 'amount', Math.max(0, Number(event.target.value)))
+                      }
+                      placeholder="0"
+                    />
+                  </td>
+                  <td className="estimate-table__remove">
+                    <button
+                      type="button"
+                      onClick={() => removeItem(item.id)}
+                      aria-label={`${item.name || '行'}を削除`}
+                      title="行を削除"
+                    >
+                      ×
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -377,14 +336,6 @@ export default function EstimatePrintPage() {
 
         <section className="estimate-summary">
           <dl>
-            <div>
-              <dt>小計</dt>
-              <dd>{formatYen(subtotal)}</dd>
-            </div>
-            <div>
-              <dt>割引合計</dt>
-              <dd>− {formatYen(totalDiscount)}</dd>
-            </div>
             {showTotal && (
               <div className="estimate-summary__total">
                 <dt>合計（税込）</dt>

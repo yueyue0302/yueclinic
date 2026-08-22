@@ -183,7 +183,7 @@ body:has(.estimate-page) .floating-reservation {
 
 .estimate-table {
   width: 100%;
-  min-width: 720px;
+  min-width: 520px;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.8rem;
@@ -204,13 +204,7 @@ body:has(.estimate-page) .floating-reservation {
 }
 
 .estimate-table th:nth-child(2) {
-  width: 58px;
-}
-
-.estimate-table th:nth-child(3),
-.estimate-table th:nth-child(4),
-.estimate-table th:nth-child(5) {
-  width: 128px;
+  width: 170px;
 }
 
 .estimate-table__remove {
@@ -280,7 +274,6 @@ body:has(.estimate-page) .floating-reservation {
 .estimate-summary .estimate-summary__total {
   position: relative;
   border: 2px solid #25384a;
-  border-top: 0;
 }
 
 .estimate-summary__total dt,
