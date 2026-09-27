@@ -18,7 +18,7 @@ type HomePriceCategory = {
   items: HomePriceItem[];
 };
 
-const hiddenHomePriceItemIds = new Set(['ganken_masaki', 'tain_basshi']);
+const hiddenHomePriceItemIds = new Set(['ganken_masaki', 'mejiri_tareme', 'tain_basshi']);
 
 export const metadata: Metadata = {
   title: '目元専門の美容外科・眼形成',

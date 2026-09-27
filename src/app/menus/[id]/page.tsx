@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import pricesData from '../../../../data/prices.json';
 import menuDetailsData from '../../../../data/menuDetails.json';
+import MaibotsuSutureComparison from '../../../components/MaibotsuSutureComparison';
 
 interface PriceCategory {
   id: string;
@@ -298,6 +299,8 @@ export default async function MenuDetail({ params }: { params: { id: string } })
             </div>
           </div>
         )}
+
+        {itemData.id === 'futae_maibotsu' && <MaibotsuSutureComparison />}
 
         {isPriorityMenu && (
           <div style={{ marginBottom: '3rem', background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '1.35rem' }}>

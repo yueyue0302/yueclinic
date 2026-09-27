@@ -1046,6 +1046,205 @@ details[open] .faq-question::after {
   transform: translateY(0);
 }
 
+/* Maibotsu suture pattern comparison */
+.suture-comparison {
+  margin-bottom: 3rem;
+}
+
+.suture-comparison__heading {
+  margin-bottom: 1.4rem;
+}
+
+.suture-comparison__heading h2 {
+  margin: 0 0 0.7rem;
+  padding: 0 0 0.8rem;
+  border-bottom: 1px solid var(--color-accent-light);
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.suture-comparison__heading p:last-child {
+  margin: 0;
+  color: #555;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.suture-comparison__eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--color-button);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.suture-comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.suture-pattern {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid #e5e1d9;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.suture-pattern--yue {
+  border-color: #8fb9ad;
+  box-shadow: 0 5px 18px rgba(54, 113, 96, 0.1);
+}
+
+.suture-pattern__badge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 1;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: #387b68;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.suture-pattern__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 320 / 230;
+}
+
+.suture-pattern__tissue {
+  fill: #fbf3ef;
+}
+
+.suture-pattern__layer-line {
+  fill: none;
+  stroke: #988f86;
+  stroke-width: 2;
+}
+
+.suture-pattern__layer-label {
+  fill: #6b645e;
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.suture-pattern__thread {
+  fill: none;
+  stroke: #b77a45;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.suture-pattern__point {
+  fill: #fff;
+  stroke: #b77a45;
+  stroke-width: 4;
+}
+
+.suture-pattern__conjunctiva-thread {
+  fill: none;
+  stroke: #247a70;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.suture-pattern__conjunctiva-point {
+  fill: #fff;
+  stroke: #247a70;
+  stroke-width: 4;
+}
+
+.suture-pattern figcaption {
+  min-height: 9.3rem;
+  padding: 0.9rem;
+  border-top: 1px solid #eee9e2;
+}
+
+.suture-pattern figcaption strong,
+.suture-pattern figcaption span {
+  display: block;
+}
+
+.suture-pattern figcaption strong {
+  margin-bottom: 0.45rem;
+  color: #3e3832;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.suture-pattern figcaption span {
+  color: #666;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.suture-comparison__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.25rem;
+  margin-top: 1rem;
+  color: #625d57;
+  font-size: 0.78rem;
+}
+
+.suture-comparison__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.suture-comparison__key {
+  display: inline-block;
+  width: 1.8rem;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.suture-comparison__key--main {
+  background: #b77a45;
+}
+
+.suture-comparison__key--conjunctiva {
+  background: #247a70;
+}
+
+.suture-comparison__summary {
+  margin: 1.15rem 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid #247a70;
+  background: #f3f8f6;
+  color: #3f4945;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.suture-comparison__note {
+  margin: 0.7rem 0 0;
+  color: #777;
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .suture-comparison__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .suture-pattern figcaption {
+    min-height: 0;
+  }
+}
+
 /* Rounded Map styling */
 .rounded-map-container {
   border-radius: 16px;

@@ -184,16 +184,6 @@ export default function AccessPage() {
         </div>
       </section>
 
-      <section style={{ marginBottom: '3rem', background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '2rem' }}>
-        <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1rem' }}>
-          術後の通院について
-        </h2>
-        <p style={{ lineHeight: 1.9, color: '#444', marginBottom: 0 }}>
-          目元の手術では、腫れや内出血の経過、抜糸、左右差の確認など、術後に相談したくなる場面があります。
-          通いやすい距離にあることは、手術後の安心感にもつながります。
-        </p>
-      </section>
-
       <div style={{ textAlign: 'center', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
         <a href={reserveUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
           LINEで空き状況を確認
