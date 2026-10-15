@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'よくある質問',
-  description: 'ゆえクリニックの予約、当日施術、モニター、支払い、未成年の施術、他院修正、料金、通院エリアに関するよくある質問です。',
+  description: 'ゆえクリニックの予約、当日施術、モニター、支払い、未成年の施術、他院修正、料金に関するよくある質問です。',
   alternates: {
     canonical: '/faq',
   },
@@ -59,12 +59,6 @@ export default function FAQ() {
           </div>
         </details>
         <details className="faq-item">
-          <summary className="faq-question">ゆえクリニックはどんな人に向いていますか？</summary>
-          <div className="faq-answer">
-            市川・本八幡・船橋エリアで、目元の手術を院長に直接相談したい方に向いています。二重埋没法、クマ取り、眉下切開、眼瞼下垂など、目元に絞って診察・施術を行っています。
-          </div>
-        </details>
-        <details className="faq-item">
           <summary className="faq-question">大手クリニックとの違いは何ですか？</summary>
           <div className="faq-answer">
             幅広い美容施術を多数扱うのではなく、目元の美容外科・眼形成に診療領域を絞っている点です。カウンセリングから施術、抜糸、アフターケアまで院長が一貫して担当し、同一施術内で複数ランクを作らないワンプライス制を大切にしています。
@@ -80,12 +74,6 @@ export default function FAQ() {
           <summary className="faq-question">他院で受けた二重埋没法やクマ取りの相談もできますか？</summary>
           <div className="faq-answer">
             はい、可能です。まぶたや目の下の状態を診察したうえで、抜糸、再埋没、切開、経過観察など、必要な選択肢を説明します。無理に当日施術をすすめることはありません。
-          </div>
-        </details>
-        <details className="faq-item">
-          <summary className="faq-question">市川・本八幡・船橋から通いやすいですか？</summary>
-          <div className="faq-answer">
-            当院は京成本線「鬼越駅」から徒歩20秒です。京成八幡（本八幡）から1駅、京成船橋から3駅で、術後の経過観察にも通いやすい立地です。
           </div>
         </details>
         <details className="faq-item">
