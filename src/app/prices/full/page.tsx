@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function FullPricesPage() {
-  return <PricesTableContent includeMejiriTareme />;
+  return <PricesTableContent includeArchivedRows />;
 }

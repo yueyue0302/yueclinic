@@ -35,6 +35,11 @@ type PriceTableRow = {
 
 const categories = pricesData.categories as PriceCategory[];
 const menuDetails = menuDetailsData as Record<string, MenuDetails>;
+const archivedPriceRowIds = new Set([
+  'tain_basshi_sekkai',
+  'tain_basshi_maibotsu',
+  'tain_basshi_korea',
+]);
 
 const detailedRowsById: Record<string, PriceTableRow[]> = {
   futae_maibotsu: [
@@ -284,17 +289,21 @@ function tableRowsForItem(item: PriceItem): PriceTableRow[] {
 }
 
 type PricesTableContentProps = {
-  includeMejiriTareme?: boolean;
+  includeArchivedRows?: boolean;
 };
 
-export default function PricesTableContent({ includeMejiriTareme = false }: PricesTableContentProps) {
-  const visibleCategories = includeMejiriTareme
+export default function PricesTableContent({ includeArchivedRows = false }: PricesTableContentProps) {
+  const visibleCategories = includeArchivedRows
     ? categories
     : categories.map((category) => ({
         ...category,
         items: category.items.filter((item) => item.id !== 'mejiri_tareme'),
       }));
-  const allRows = visibleCategories.flatMap((category) => category.items.flatMap(tableRowsForItem));
+  const rowsForItem = (item: PriceItem) => {
+    const rows = tableRowsForItem(item);
+    return includeArchivedRows ? rows : rows.filter((row) => !archivedPriceRowIds.has(row.id));
+  };
+  const allRows = visibleCategories.flatMap((category) => category.items.flatMap(rowsForItem));
   const itemListStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -355,7 +364,7 @@ export default function PricesTableContent({ includeMejiriTareme = false }: Pric
                   </tr>
                 </thead>
                 <tbody>
-                  {category.items.flatMap(tableRowsForItem).map((row) => (
+                  {category.items.flatMap(rowsForItem).map((row) => (
                       <tr key={row.id}>
                         <td className="prices-table__menu">
                           {row.href ? (

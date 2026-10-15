@@ -4,7 +4,7 @@ import PricesTableContent from './PricesTableContent';
 export const metadata: Metadata = {
   title: '料金表｜二重埋没法・クマ取り・眉下切開・目元整形',
   description:
-    'yueclinic（ゆえクリニック）の料金表。二重埋没法、クマ取り、眉下切開、眼瞼下垂、目頭切開、他院施術の抜糸まで、各施術ページへリンクして確認できます。',
+    'yueclinic（ゆえクリニック）の料金表。二重埋没法、クマ取り、眉下切開、眼瞼下垂、目頭切開など、各施術ページへリンクして確認できます。',
   alternates: {
     canonical: '/prices',
   },
