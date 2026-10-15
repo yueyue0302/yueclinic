@@ -135,6 +135,19 @@ npm run deploy
 3. push 後、約1〜2分で本番に自動反映される
 4. **デプロイ確認**: GitHub Actions タブでワークフローの成否を確認
 
+### 複数PC（家・職場）での安全な運用
+
+Codexは各タスクの開始時に、編集前の同期確認を必ず行う。
+
+1. `git status --short` で未コミット変更を確認する
+2. `git fetch origin main` でリモートの最新状態を確認する
+3. 作業ツリーがクリーンで、ローカルがリモートより遅れている場合だけ `git pull --ff-only origin main` を実行する
+4. 未コミット変更がある状態でリモートも進んでいる場合は、勝手にpull・stash・revertせず、状況をユーザーへ報告する
+5. push前にもう一度 `git fetch origin main` を行い、別PCから新しい更新が入っていないか確認する
+6. リモートが進んでいる場合は、その更新を安全に取り込んでビルド確認してからpushする
+7. `git push --force`、`git reset --hard`、既存変更の無断破棄は禁止する
+8. 1台での変更をpushし終えてから、もう1台で次の作業を始めることを基本とする
+
 ```bash
 # 変更をまとめてpush
 git add -A
@@ -296,4 +309,3 @@ target="_blank" rel="noopener noreferrer" を必ず付与。
    - JSONの構文エラー → `node -e` でバリデーション
    - TypeScriptの型エラー → `npm run build` で事前チェック
    - Cloudflare API の一時障害 → 再push or 手動re-run
-
