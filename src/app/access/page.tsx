@@ -6,15 +6,15 @@ import { clinicGoogleMapsEmbedUrl, clinicGoogleMapsUrl } from '../../lib/clinicM
 const reserveUrl = 'https://lin.ee/VqhBREq';
 
 export const metadata: Metadata = {
-  title: 'アクセス｜鬼越駅徒歩20秒・市川/本八幡/船橋から通いやすい目元専門美容外科',
+  title: 'アクセス・道案内｜市川市・鬼越駅徒歩20秒の目元専門美容外科',
   description:
-    'yueclinic（ゆえクリニック）へのアクセス。京成本線「鬼越駅」徒歩20秒。京成八幡（本八幡）から1駅、京成船橋から3駅。市川・船橋・下総中山・津田沼エリアから通いやすい目元専門美容外科です。',
+    '千葉県市川市の目元専門美容外科、yueclinic（ゆえクリニック）のアクセス案内。京成本線「鬼越駅」徒歩20秒。駅の改札からクリニック入口までの道順を写真と地図でご紹介します。本八幡・船橋・下総中山方面からお越しの方もご確認ください。',
   alternates: {
     canonical: '/access',
   },
   openGraph: {
     title: 'アクセス｜yueclinic（ゆえクリニック）',
-    description: '鬼越駅徒歩20秒。市川・本八幡・船橋から通いやすい目元専門美容外科です。',
+    description: '千葉県市川市・京成本線「鬼越駅」徒歩20秒。yueclinic（ゆえクリニック）への道順を、駅の改札から入口までの写真と地図でご案内します。',
     url: 'https://yueclinic.com/access',
     type: 'article',
   },
@@ -72,9 +72,6 @@ export default function AccessPage() {
       />
 
       <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <p style={{ color: 'var(--color-button)', fontWeight: 600, marginBottom: '0.8rem' }}>
-          市川・本八幡・船橋から通いやすい目元専門美容外科
-        </p>
         <h1 className="section__title" style={{ marginBottom: '1.2rem' }}>
           アクセス
         </h1>
@@ -140,6 +137,24 @@ export default function AccessPage() {
           ゆえクリが選ばれる理由
         </Link>
       </div>
+
+      <aside
+        aria-label="クリニックのご案内"
+        style={{ maxWidth: '720px', margin: '2.5rem auto 0', color: '#666', fontSize: '0.8125rem', fontWeight: 400, lineHeight: 1.9, textAlign: 'left' }}
+      >
+        <p style={{ marginBottom: '0.5rem' }}>
+          市川・本八幡・船橋から通いやすい目元専門美容外科
+        </p>
+        <p style={{ margin: 0 }}>
+          千葉県市川市北方のyueclinic（ゆえクリニック）は、京成本線「鬼越駅」徒歩20秒。
+          二重埋没法・眉下切開・眼瞼下垂・クマ取りなど、目元の美容外科診療を行っています。
+          診療内容や費用は
+          <Link href="/prices" style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+            メニュー・料金一覧
+          </Link>
+          をご確認ください。
+        </p>
+      </aside>
     </article>
   );
 }
