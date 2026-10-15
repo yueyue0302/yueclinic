@@ -20,14 +20,6 @@ export const metadata: Metadata = {
   },
 };
 
-const routes = [
-  ['京成八幡（本八幡）', '京成本線で1駅', '約2分'],
-  ['京成船橋', '京成本線で3駅', '約8分'],
-  ['京成中山・下総中山', '京成本線で1駅', '約2分'],
-  ['市川真間', '京成本線で2駅', '約4分'],
-  ['京成津田沼', '京成本線で乗り換えなし', '約15分'],
-];
-
 const routePhotos = [
   {
     title: '1. 鬼越駅の改札を出ます',
@@ -86,23 +78,7 @@ export default function AccessPage() {
         <h1 className="section__title" style={{ marginBottom: '1.2rem' }}>
           アクセス
         </h1>
-        <p style={{ lineHeight: 1.9, color: '#444', maxWidth: '720px', margin: '0 auto' }}>
-          yueclinic（ゆえクリニック）は、京成本線「鬼越駅」から徒歩20秒の場所にあります。
-          本八幡・船橋・市川・下総中山エリアからも通いやすく、術後の経過観察にも来院しやすい立地です。
-        </p>
       </header>
-
-      <section style={{ marginBottom: '3rem', background: '#fdfdf9', border: '1px solid var(--color-accent-light)', borderRadius: '8px', padding: '2rem' }}>
-        <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1rem' }}>
-          住所
-        </h2>
-        <p style={{ lineHeight: 1.9, color: '#444', marginBottom: '1rem' }}>
-          〒272-0815 千葉県市川市北方1-9-14-2F
-        </p>
-        <p style={{ lineHeight: 1.9, color: '#444', marginBottom: 0 }}>
-          鬼越駅の改札を出て右へ進み、線路を渡って薬局の左側にある青っぽいビルの2階です。
-        </p>
-      </section>
 
       <section style={{ marginBottom: '3rem' }}>
         <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1rem', textAlign: 'center' }}>
@@ -133,34 +109,6 @@ export default function AccessPage() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1rem', textAlign: 'center' }}>
-          主要駅からの目安
-        </h2>
-        <div style={{ overflowX: 'auto', border: '1px solid var(--color-accent-light)', borderRadius: '8px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '640px', background: '#fff' }}>
-            <tbody>
-              <tr style={{ background: 'var(--color-bg)' }}>
-                {['出発駅', 'ルート', '電車の目安'].map((heading) => (
-                  <td key={heading} style={{ padding: '1rem', color: 'var(--color-button)', fontWeight: 700, borderBottom: '1px solid var(--color-accent-light)' }}>
-                    {heading}
-                  </td>
-                ))}
-              </tr>
-              {routes.map((route) => (
-                <tr key={route[0]}>
-                  {route.map((cell) => (
-                    <td key={cell} style={{ padding: '1rem', color: '#444', lineHeight: 1.7, borderBottom: '1px solid var(--color-accent-light)' }}>
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </section>
 
