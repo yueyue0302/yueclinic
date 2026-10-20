@@ -7,6 +7,12 @@ export const metadata: Metadata = {
     'yueclinic（ゆえクリニック）の料金表。二重埋没法、クマ取り、眉下切開、眼瞼下垂、目頭切開など、各施術ページへリンクして確認できます。',
   alternates: {
     canonical: '/prices',
+    languages: {
+      ja: '/prices',
+      en: '/international-patients/prices/en',
+      'zh-CN': '/international-patients/prices/zh',
+      'x-default': '/prices',
+    },
   },
   openGraph: {
     title: '料金表｜yueclinic',

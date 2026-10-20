@@ -27,6 +27,8 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/faq`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.85 },
   { url: `${BASE_URL}/flow`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.85 },
   { url: `${BASE_URL}/international-patients`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.8 },
+  { url: `${BASE_URL}/international-patients/prices/en`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.75 },
+  { url: `${BASE_URL}/international-patients/prices/zh`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.75 },
   { url: `${BASE_URL}/kajihara-eye-clinic`, lastModified: UPDATED_AT, changeFrequency: 'monthly', priority: 0.75 },
   { url: `${BASE_URL}/columns`, lastModified: UPDATED_AT, changeFrequency: 'weekly', priority: 0.8 },
   { url: `${BASE_URL}/llms.txt`, lastModified: UPDATED_AT, changeFrequency: 'weekly', priority: 0.6 },

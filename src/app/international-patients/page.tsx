@@ -214,8 +214,11 @@ export default function InternationalPatientsPage() {
           <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Contact via Instagram DM
           </a>
-          <Link href="/prices" className="btn btn--outline">
-            Price list
+          <Link href="/international-patients/prices/en" className="btn btn--outline">
+            Price list (English)
+          </Link>
+          <Link href="/international-patients/prices/zh" className="btn btn--outline">
+            价格表（中文）
           </Link>
           <Link href="/access" className="btn btn--outline">
             Access

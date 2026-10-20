@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import pricesData from '../../../data/prices.json';
 import menuDetailsData from '../../../data/menuDetails.json';
+import {
+  pricePageCopy,
+  translatedCategoryNames,
+  translatedRows,
+  type PricesLocale,
+} from './priceTranslations';
 
 type PriceItem = {
   id: string;
@@ -290,9 +296,11 @@ function tableRowsForItem(item: PriceItem): PriceTableRow[] {
 
 type PricesTableContentProps = {
   includeArchivedRows?: boolean;
+  locale?: PricesLocale;
 };
 
-export default function PricesTableContent({ includeArchivedRows = false }: PricesTableContentProps) {
+export default function PricesTableContent({ includeArchivedRows = false, locale = 'ja' }: PricesTableContentProps) {
+  const copy = pricePageCopy[locale];
   const visibleCategories = includeArchivedRows
     ? categories
     : categories.map((category) => ({
@@ -303,11 +311,24 @@ export default function PricesTableContent({ includeArchivedRows = false }: Pric
     const rows = tableRowsForItem(item);
     return includeArchivedRows ? rows : rows.filter((row) => !archivedPriceRowIds.has(row.id));
   };
-  const allRows = visibleCategories.flatMap((category) => category.items.flatMap(rowsForItem));
+  const localizedRowsForItem = (item: PriceItem) =>
+    rowsForItem(item).map((row) => {
+      if (locale === 'ja') return row;
+      return { ...row, ...translatedRows[locale][row.id] };
+    });
+  const categoryName = (category: PriceCategory) => {
+    if (locale === 'ja') return category.name;
+    return translatedCategoryNames[locale][category.id as keyof typeof translatedCategoryNames[typeof locale]] || category.name;
+  };
+  const localizedPriceLabel = (label?: string) => {
+    if (!label || locale === 'ja') return label;
+    return label === '定価' ? copy.regularLabel : copy.monitorLabel;
+  };
+  const allRows = visibleCategories.flatMap((category) => category.items.flatMap(localizedRowsForItem));
   const itemListStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'yueclinic 料金表',
+    name: copy.schemaName,
     itemListElement: allRows.map((row, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -317,7 +338,7 @@ export default function PricesTableContent({ includeArchivedRows = false }: Pric
   };
 
   return (
-    <article className="section fade-in" style={{ maxWidth: '1080px', marginTop: '1rem', paddingTop: '1.5rem' }}>
+    <article lang={copy.lang} className="section fade-in" style={{ maxWidth: '1080px', marginTop: '1rem', paddingTop: '1.5rem' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListStructuredData) }}
@@ -325,46 +346,46 @@ export default function PricesTableContent({ includeArchivedRows = false }: Pric
 
       <header style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
         <p style={{ color: 'var(--color-button)', fontWeight: 600, marginBottom: '0.8rem' }}>
-          目元専門 yueclinic
+          {copy.eyebrow}
         </p>
         <h1 className="section__title" style={{ marginBottom: '1.2rem', display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '0.7rem', flexWrap: 'wrap' }}>
-          <span>メニュー・料金表</span>
-          <span style={{ color: '#888', fontSize: '0.78rem', fontWeight: 400 }}>＊片目は３０％off</span>
+          <span>{copy.title}</span>
+          <span style={{ color: '#888', fontSize: '0.78rem', fontWeight: 400 }}>{copy.oneEyeDiscount}</span>
         </h1>
       </header>
 
       <div style={{ maxWidth: '760px', margin: '0 auto 2.4rem', border: '1px solid var(--color-accent-light)', borderRadius: '8px', background: '#fdfdf9', padding: '1rem', textAlign: 'center', color: '#4a433b' }}>
         <div style={{ fontSize: '0.82rem', color: 'var(--color-button)', fontWeight: 700, letterSpacing: '0.04em', marginBottom: '0.25rem' }}>
-          キャンペーン中｜特別割引額でご案内中
+          {copy.campaignLabel}
         </div>
         <div style={{ fontSize: '1.02rem', fontWeight: 700 }}>
-          二重埋没法 ¥68,000 ／ 眉下切開 ¥120,000
+          {copy.campaignPrices}
         </div>
         <div style={{ fontSize: '0.78rem', color: '#777', marginTop: '0.25rem', lineHeight: 1.6 }}>
-          症例写真にご協力いただける方が対象です。適応や条件はカウンセリングで確認します。
+          {copy.campaignCondition}
         </div>
       </div>
 
       {visibleCategories.map((category) => (
         <section key={category.id} style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontSize: '1.35rem', color: 'var(--color-button)', marginBottom: '1.2rem' }}>
-            {category.name}
+            {categoryName(category)}
           </h2>
           <div className="prices-table-scroll-frame">
-            <div className="prices-table-scroll-cue" aria-hidden="true">右にスクロール →</div>
+            <div className="prices-table-scroll-cue" aria-hidden="true">{copy.scrollCue}</div>
             <div className="prices-table-wrap">
               <table className="prices-table">
                 <thead>
                   <tr>
-                    <th>施術</th>
-                    <th>モニター価格</th>
-                    <th>通常料金</th>
-                    <th>内容</th>
-                    <th>詳細</th>
+                    <th>{copy.procedureHeader}</th>
+                    <th>{copy.monitorHeader}</th>
+                    <th>{copy.standardHeader}</th>
+                    <th>{copy.contentHeader}</th>
+                    <th>{copy.detailsHeader}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {category.items.flatMap(rowsForItem).map((row) => (
+                  {category.items.flatMap(localizedRowsForItem).map((row) => (
                       <tr key={row.id}>
                         <td className="prices-table__menu">
                           {row.href ? (
@@ -383,7 +404,7 @@ export default function PricesTableContent({ includeArchivedRows = false }: Pric
                         </td>
                         <td className="prices-table__price">
                           <span>{row.price || '—'}</span>
-                          {row.priceLabel && <small>{row.priceLabel}</small>}
+                          {row.priceLabel && <small>{localizedPriceLabel(row.priceLabel)}</small>}
                         </td>
                         <td className="prices-table__usual">
                           {row.usualPrice || '—'}
@@ -394,7 +415,7 @@ export default function PricesTableContent({ includeArchivedRows = false }: Pric
                         <td className="prices-table__detail">
                           {row.href ? (
                             <Link href={row.href} className="prices-table__detail-link">
-                              詳細
+                              {copy.detailsLabel}
                             </Link>
                           ) : (
                             <span>-</span>
@@ -410,13 +431,12 @@ export default function PricesTableContent({ includeArchivedRows = false }: Pric
       ))}
 
       <p style={{ maxWidth: '860px', margin: '0 auto', color: '#666', fontSize: '0.86rem', lineHeight: 1.8 }}>
-        ※通常のゆえクリ美容外科手術では、診察料および当院術後の抜糸代は施術料金に含まれており無料です。
-        「梶原アイクリニック紹介関連」の受診料・抜糸料は、福岡の梶原アイクリニックで手術を希望される方向けの別枠料金です。
+        {copy.footnote}
       </p>
 
       <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <a href="https://lin.ee/VqhBREq" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-          LINEで相談・予約する
+        <a href={copy.ctaHref} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+          {copy.ctaLabel}
         </a>
       </div>
     </article>
